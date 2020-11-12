@@ -1,0 +1,476 @@
+//colors
+$main-color: #34B86E;
+$second-color: #FFFFFF;
+$bg-color: #18181b;
+
+$width-content: 1141px;
+
+@mixin font-settings ($family, $weight, $size, $height) {
+    font-family: $family;
+    font-style: normal;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+}
+
+@mixin main-btn {
+    @include font-settings('RoadRadio', 700, 20px, 20.18px);
+    border-style: none;
+    color: $second-color;
+    outline: none;
+    background-color: $main-color;
+    box-shadow: 3px 3px 0px #2A9659;
+    padding: 17px 30px 18px;
+
+    &:active() {
+        box-shadow: none;
+        transform: translate(3px, 3px);
+    }
+}
+
+@mixin second-btn {
+    @include font-settings('Gilroy', 600, 16px, 19.09px);
+    border-style: none;
+    color: $second-color;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid $second-color;
+    padding: 12px 16px 13px;
+}
+
+@mixin details-btn {
+    text-decoration: none;
+    color: $second-color;
+    @include font-settings('Gilroy', 300, 14px, 16.14px);
+    border-bottom: 1px solid $second-color;
+}
+
+@mixin flex-container () {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%wrap-block {
+    @include flex-container ();
+    flex-direction: column;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $bg-color;
+}
+
+h1, h2, h3, h4, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* h1 {
+    @include font-settings ('RoadRadio', 900, 60px, 61px);
+} */
+
+.content {
+    @include flex-container();
+    width: $width-content;
+}
+
+.main-wrap {
+    @extend %wrap-block;
+    background: url('../../../assets/images/first-bg.png'), no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    .header {
+        @include flex-container();
+        justify-content: space-between;
+        width: $width-content;
+        margin-top: 10px;
+
+        .header-logo {
+            @include flex-container();
+            flex-direction: row;
+
+            &__svg {
+                width: 91px;
+                height: 76px;
+                background: url('../../../assets/icons/main-ico.svg'), no-repeat;
+            }
+
+            &__name {
+                @include font-settings('Gilroy', 400, 14.05px, 13.27px);
+                width: 112px;
+                color: $second-color;
+            }
+        }
+
+        .header-nav {
+            @include flex-container();
+            @include font-settings('Gilroy', 400, 20px, 23.2px);
+
+
+            &>li {
+
+                list-style: none;
+                margin-right: 45px;
+
+                a {
+                    text-decoration: none;
+                    color: $second-color;
+                }
+            }
+        }
+
+        .back-call {
+            @include second-btn();
+        }
+
+        &__burger {
+            //display: none;
+            display: block;
+            position: relative;
+            width: 36px;
+            height: 31px;
+            z-index: 2;
+            transition: transform 0.5s;
+            background: url('../../../assets/icons/burger-menu.svg'), no-repeat;
+        }
+    }
+
+    .content {
+
+        .consult-info {
+            @include flex-container();
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            height: 60vh;
+            margin-right: 31px;
+
+            &__title {
+                @include font-settings ('RoadRadio', 900, 60px, 61px);
+                color: $second-color;
+                width: 392px;
+            }
+
+            &__subtitle {
+                @include font-settings ('Gilroy', 600, 20px, 23.86px);
+                color: $second-color;
+                margin-top: 54px;
+
+                &>span {
+                    color: $main-color;
+                }
+            }
+
+            &__btn {
+                @include main-btn();
+                margin-top: 41px;
+            }
+
+            .social-net-links {
+                @include flex-container();
+                @include font-settings('RoadRadio', 400, 20px, 20.18px);
+                margin-top: 123px;
+
+                &>li {
+                    list-style: none;
+                    margin-right: 5px;
+
+                    button {
+                        @include second-btn();
+                        border-color: $main-color;
+                    }
+                }
+
+                .facebook-btn {
+                    padding: 11px 22px 10px;
+                }
+
+                .instagram-btn {
+                    padding: 11px 18px 10px;
+                }
+
+                .vk-btn {
+                    padding: 11px 29px 10px;
+                }
+            }
+        }
+        
+        .tattoo-master-img {
+            margin-right: 108px;
+        }
+
+        .scroll-further {
+            @include font-settings('RoadRadio', 400, 20px, 20.18px);
+            transform: rotate(-90deg);
+            color: $main-color;
+            position: absolute;
+            width: 172px;
+            right: 2%;
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 7.78px;
+                width: 12.73px;
+                background: url('../../../assets/icons/main-arrow.svg'), no-repeat;
+                transform: rotate(90deg) translate(6px, 17px);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                height: 7.78px;
+                width: 12.73px;
+                background: url('../../../assets/icons/main-arrow.svg'), no-repeat;
+                transform: rotate(90deg) translate(6px, 198px);
+            }
+        }
+
+    }
+
+    .tattoo-tap-logo {
+        position: absolute;
+        height: 601px;
+        width: 57px;
+        background: url('../../../assets/images/tattoo-tap.png'), no-repeat;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.master-info-wrap {
+    @extend %wrap-block;
+    height: 656px;
+
+    .content {
+        @include flex-container();
+
+        .owl-img {
+            margin-right: 73px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 110px;
+                width: 210px;
+                background: url('../../../assets/images/first-plaster.png'), no-repeat;
+                transform: translate(-76px, -56px);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                height: 187px;
+                width: 173px;
+                background: url('../../../assets/images/second-plaster.png'), no-repeat;
+                transform: translate(-109px, 283px);
+            }
+        }
+
+        .about-master {
+            @include flex-container();
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            color: $second-color;
+            width: 694px;
+            height: 579px;
+
+            &__name {
+                @include font-settings('RoadRadio', 700, 30px, 30.27px);
+                border-left: 6px solid $main-color;
+                padding-left: 9px;
+            }
+
+            .master-info {
+                @include flex-container();
+                @include font-settings('Gilroy', 400, 16px, 18.56px);
+                align-items: flex-start;
+
+                .master-achives {
+                    width: 326px;
+
+                    &__name {
+
+                    }
+                }
+
+                &__education {
+                    width: 326px;
+                }
+            }
+
+            .master-services {
+                @include flex-container();
+                text-align: center;
+                align-items: flex-start;
+                @include font-settings('Gilroy', 500, 14px, 16.48px);
+
+                &-block {
+                    margin-right: 9px;
+
+                    &__logo {
+                        width: 60px;
+                        height: 59px;
+                        background: url('../../../assets/icons/skull-pen.svg'), no-repeat;
+                        margin: 0 auto;
+                    }
+                }
+            }
+
+            &__btn {
+                @include main-btn();
+            }
+        }
+    }
+}
+
+
+.services-wrap {
+    @extend %wrap-block;
+    height: 488px;
+    background: url('../../../assets/images/services-bg.png'), no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    .content {
+        @include flex-container();
+        flex-direction: column;
+        align-items: flex-start;
+        color: $second-color;
+
+        .services-title {
+
+            &__title {
+                @include font-settings('RoadRadio', 700, 30px, 30.27px);
+                border-left: 6px solid $main-color;
+                padding-left: 9px;
+            }
+
+            &__subtitle {
+                @include font-settings('Gilroy', 400, 18px, 20.88px);
+                margin-left: 15px;
+                width: 307px;
+            }
+            margin-bottom: 26px;
+        }
+
+        .services-blocks {
+            @include flex-container();
+            flex-direction: row;
+
+            .services-block {
+                @include flex-container();
+                flex-direction: column;
+                justify-content: space-around;
+                width: 487px;
+                height: 319px;
+                border: 1px solid $main-color;
+                background-color: transparent;
+                margin-right: 36px;
+                padding: 0px 37px 0 27px;
+                align-items: flex-start;
+
+                &__title {
+                    @include font-settings('RoadRadio', 700, 25px, 25.22px);
+                    width: 220px;
+                    margin-left: 75px;
+                }
+
+                &__desc {
+                    @include font-settings('Gilroy', 300, 14px, 16.14px);
+                }
+
+                &__btn {
+                    @include main-btn();
+                    @include font-settings('RoadRadio', 700, 16px, 16.14px);
+                    padding: 10px 16px 9px;
+                }
+
+                
+                &__tool-svg {
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 62px;
+                        height: 62px;
+                        background: url('../../../assets/icons/tattoo-tool.svg'), no-repeat;
+                        transform: translateX(-75px);
+                    }
+                }
+
+                &__guy-svg {
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 62px;
+                        height: 62px;
+                        background: url('../../../assets/icons/cap-guy.svg'), no-repeat;
+                        transform: translateX(-75px);
+                    }
+                }
+
+                .services-btns {
+
+                    &__btn {
+                        @include main-btn();
+                        @include font-settings('RoadRadio', 700, 16px, 16.14px);
+                        padding: 10px 16px 9px;
+                        margin-right: 28px;
+                    }
+
+                    &__details {
+                        @include details-btn();
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.portfolio-wrap {
+    @extend %wrap-block;
+    height: 1599px;
+
+    .content {
+        @include flex-container();
+        flex-direction: column;
+        color: $second-color;
+        width: 1157px;
+
+        .portfolio-flex-imgs {
+            @include flex-container();
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .portfolio-info {
+                width: 341px;
+                margin-right: 27px;
+            }
+
+            .block-img {
+                @include flex-container();
+                flex-direction: column;
+            }
+        }
+
+        .portfolio-btns {
+            margin-top: 42px;
+            
+            &__btn {
+                @include main-btn();
+                padding: 18px 16px 17px;
+                margin-right: 29px;
+            }
+
+            &__details {
+                @include details-btn();
+            }
+        }
+    }
+}
