@@ -6,6 +6,8 @@ $card-color: #101010;
 
 $width-content: 1141px;
 
+$mobile-max-width: 1300px;
+
 @mixin font-settings ($family, $weight, $size, $height) {
     font-family: $family;
     font-style: normal;
@@ -90,8 +92,8 @@ ul {
 
     .header {
         @include flex-container();
-        justify-content: space-between;
         width: $width-content;
+        justify-content: space-between;
         margin-top: 10px;
 
         .header-logo {
@@ -108,6 +110,7 @@ ul {
                 @include font-settings('Gilroy', 400, 14.05px, 13.27px);
                 width: 112px;
                 color: $second-color;
+                user-select: none;
             }
         }
 
@@ -124,6 +127,14 @@ ul {
                 a {
                     text-decoration: none;
                     color: $second-color;
+                }
+            }
+
+            &__main {
+
+                a {
+                    color: $main-color !important;
+                    border-bottom: 1px solid $main-color;
                 }
             }
         }
@@ -447,20 +458,54 @@ ul {
         color: $second-color;
         width: 1157px;
 
-        .portfolio-flex-imgs {
+        .portfolio-imgs {
             @include flex-container();
             flex-direction: row;
             flex-wrap: wrap;
+            width: 1155px;
 
             .portfolio-info {
-                width: 341px;
-                margin-right: 27px;
+                width: 339px;
+                margin-right: 29px;
+                align-self: flex-start;
+
+                &__title {
+                    @include font-settings('RoadRadio', 700, 30px, 30.27px);
+                    border-left: 6px solid $main-color;
+                    padding-left: 9px;
+                }
+    
+                &__desc {
+                    @include font-settings('Gilroy', 400, 18px, 20.88px);
+                    margin-left: 15px;
+                }
             }
 
-            .block-img {
-                @include flex-container();
-                flex-direction: column;
+            .img-block {
+                img {
+                    object-fit: cover;
+                }
+
+                &:nth-child(4) {
+                    transform: translateY(-49%);
+                }
+
+                &:nth-child(5) {
+                    position: absolute;
+                    //left: calc(50% - 100px);
+                    transform: translateY(-54%);
+                }
+
+                &:nth-child(n+7):nth-child(-n+8) {
+                    margin-right: 3px;
+                }
+
+                &:nth-child(n+10):nth-child(-n+11) {
+                    margin-right: 3px;
+                }
             }
+
+            
         }
 
         .portfolio-btns {
@@ -731,7 +776,18 @@ ul {
         align-items: flex-start;
         color: $second-color;
         height: 100%;
+        min-width: 0;
 
+
+        &::after {
+            content: '';
+            width: 411px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            background-color: $main-color;
+            z-index: -1;
+        }
 
         .stock-title {
             @include font-settings('RoadRadio', 700, 30px, 30.27px);
@@ -741,13 +797,14 @@ ul {
         }
 
         .stock-slider {
-            @include flex-container();
-            flex-direction: row;
+           min-width: 0;
+           position: relative;
+           width: 100%;
 
             .stock-block {
                 text-align: left;
                 background-color: $card-color;
-                width: 363.55px;
+                width: 357.55px;
                 height: 405px;
                 display: flex;
                 justify-content: flex-start;
@@ -757,6 +814,7 @@ ul {
 
                 &__img {
                     border: 3px solid $main-color;
+                    width: 338.55px;
                 }
 
                 &__title {
@@ -774,6 +832,39 @@ ul {
                     margin-left: 22px;
                     margin-right: 22px;
                 }
+            }
+
+            .slick-track {
+                display: flex;
+                position: relative;
+            }
+
+            .slick-list {
+                overflow: hidden;
+            }
+
+            .slick-arrow {
+                position: absolute;
+                top: 50%;
+                z-index: 10;
+                width: 40px;
+                height: 40px;
+                background: url('../../../assets/icons/faq-arrow.svg') no-repeat;
+                background-color: $main-color;
+                background-position: center;
+                font-size: 0;
+            }
+
+            .slick-prev {
+                right: 400px;
+                transform: rotate(180deg);
+                top: -84px;
+            }
+
+            .slick-next {
+                right: 326px;
+                top: -84px;
+                
             }
         }
     }

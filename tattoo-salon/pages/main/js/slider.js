@@ -1,9 +1,7 @@
 $(document).ready(function(){
-   /*  $('.stock-slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        asNavFor: '.slider-nav'
-    }); */
+    $('.stock-slider').slick({
+        arrows: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+    }); 
 });
