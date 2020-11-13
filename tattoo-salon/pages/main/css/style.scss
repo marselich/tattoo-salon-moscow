@@ -2,6 +2,7 @@
 $main-color: #34B86E;
 $second-color: #FFFFFF;
 $bg-color: #18181b;
+$card-color: #101010;
 
 $width-content: 1141px;
 
@@ -63,7 +64,11 @@ body {
     background-color: $bg-color;
 }
 
-h1, h2, h3, h4, ul {
+h1,
+h2,
+h3,
+h4,
+ul {
     margin: 0;
     padding: 0;
 }
@@ -198,7 +203,7 @@ h1, h2, h3, h4, ul {
                 }
             }
         }
-        
+
         .tattoo-master-img {
             margin-right: 108px;
         }
@@ -294,9 +299,7 @@ h1, h2, h3, h4, ul {
                 .master-achives {
                     width: 326px;
 
-                    &__name {
-
-                    }
+                    &__name {}
                 }
 
                 &__education {
@@ -356,6 +359,7 @@ h1, h2, h3, h4, ul {
                 margin-left: 15px;
                 width: 307px;
             }
+
             margin-bottom: 26px;
         }
 
@@ -391,7 +395,7 @@ h1, h2, h3, h4, ul {
                     padding: 10px 16px 9px;
                 }
 
-                
+
                 &__tool-svg {
                     &::before {
                         content: '';
@@ -461,7 +465,7 @@ h1, h2, h3, h4, ul {
 
         .portfolio-btns {
             margin-top: 42px;
-            
+
             &__btn {
                 @include main-btn();
                 padding: 18px 16px 17px;
@@ -471,6 +475,624 @@ h1, h2, h3, h4, ul {
             &__details {
                 @include details-btn();
             }
+        }
+    }
+}
+
+.why-choose-us-wrap {
+    @extend %wrap-block;
+    height: 551px;
+    background: url('../../../assets/images/services-bg.png'), no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    .content {
+        @include flex-container();
+        flex-direction: row;
+        align-items: flex-start;
+        color: $second-color;
+        height: 100%;
+        justify-content: left;
+
+        .choose-us-info {
+            margin-right: 20px;
+
+            .choose-us-title {
+
+                &__title {
+                    @include font-settings('RoadRadio', 700, 30px, 30.27px);
+                    border-left: 6px solid $main-color;
+                    padding-left: 9px;
+                }
+
+                &__subtitle {
+                    @include font-settings('Gilroy', 400, 18px, 20.88px);
+                    margin-left: 15px;
+                    width: 307px;
+                }
+
+                margin-bottom: 75px;
+                margin-top: 25px;
+            }
+
+            .choose-us-grid {
+                display: grid;
+                grid-template-rows: repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 44px;
+
+                .choose-us-block {
+                    text-align: left;
+
+
+                    &__title {
+                        @include font-settings('RoadRadio', 700, 20px, 20.18px);
+                        margin-left: 70px;
+                        margin-bottom: 36px;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            transform: translate(-70px, -20px);
+                        }
+                    }
+
+                    &__desc {
+                        @include font-settings('Gilroy', 300, 14px, 16.14px);
+                    }
+
+                    &:nth-child(1) {
+                        width: 232px;
+
+                        .choose-us-block__title::before {
+                            width: 58.63px;
+                            height: 62px;
+                            background: url('../../../assets/icons/tattoo-tool.svg'), no-repeat;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        width: 263px;
+
+                        .choose-us-block__title::before {
+                            width: 62px;
+                            height: 52.07px;
+                            background: url('../../../assets/icons/sertificate.svg'), no-repeat;
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        width: 289px;
+
+                        .choose-us-block__title::before {
+                            width: 62px;
+                            height: 49.5px;
+                            background: url('../../../assets/icons/tattoo-pen.svg'), no-repeat;
+                        }
+                    }
+
+                    &:nth-child(4) {
+                        width: 266px;
+
+                        .choose-us-block__title::before {
+                            width: 52.31px;
+                            height: 62px;
+                            background: url('../../../assets/icons/tattoo-fire.svg'), no-repeat;
+                        }
+                    }
+                }
+            }
+        }
+
+        .tattoo-guy {
+            align-self: flex-end;
+        }
+    }
+}
+
+.our-masters-wrap {
+    @extend %wrap-block;
+    height: 628px;
+
+    .content {
+        @include flex-container();
+        flex-direction: column;
+        align-items: flex-start;
+        color: $second-color;
+        height: 100%;
+
+        .our-masters-title {
+
+            &__title {
+                @include font-settings('RoadRadio', 700, 30px, 30.27px);
+                border-left: 6px solid $main-color;
+                padding-left: 9px;
+            }
+
+            &__subtitle {
+                @include font-settings('Gilroy', 400, 18px, 20.88px);
+                margin-left: 15px;
+                width: 374px;
+            }
+
+            margin-bottom: 57px;
+        }
+
+        .masters-cards {
+            @include flex-container();
+
+            .master-card {
+                text-align: center;
+                background-color: $card-color;
+                width: 363px;
+                height: 418px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-direction: column;
+                margin-right: 37px;
+
+                &__img {
+                    border: 3px solid $main-color;
+                }
+
+                &__name {
+                    @include font-settings('RoadRadio', 700, 25px, 25.22px);
+                    color: $main-color;
+                    margin-top: 18px;
+                }
+
+                &__info {
+                    @include font-settings('Gilroy', 300, 14px, 16.14px);
+                }
+
+                &__btn {
+                    @include details-btn();
+                    @include font-settings('RoadRadio', 700, 20px, 20.18px);
+                    color: $main-color;
+                    border-color: $main-color;
+                    margin-bottom: 34px;
+                }
+            }
+        }
+    }
+}
+
+.skills-wrap {
+    @extend %wrap-block;
+    height: 393px;
+    background: url('../../../assets/images/services-bg.png'), no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    .content {
+        @include flex-container();
+        flex-direction: row;
+        align-items: flex-start;
+        color: $second-color;
+        height: 100%;
+
+        .tattoo-tool {
+            align-self: flex-end;
+            margin-right: 84px;
+        }
+
+        .skill-info {
+            align-self: flex-end;
+            height: 339px;
+
+            &__title {
+                @include font-settings('RoadRadio', 700, 20px, 20.18px);
+                color: $main-color;
+                margin-bottom: 20px;
+            }
+
+            &__subtitle {
+                @include font-settings('RoadRadio', 700, 30px, 30.27px);
+                margin-bottom: 13px;
+            }
+
+            &__desc {
+                @include font-settings('Gilroy', 400, 18px, 20.88px);
+                margin-bottom: 38px;
+                width: 653px;
+            }
+
+            .skill-stat {
+                @include flex-container();
+                flex-direction: row;
+                justify-content: flex-start;
+
+                .stat-block {
+                    margin-right: 75px;
+
+                    &__num {
+                        @include font-settings('RoadRadio', 700, 50px, 50.45px);
+                        color: $main-color;
+                    }
+
+                    &__name {
+                        @include font-settings('Gilroy', 400, 20px, 23.2px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.stock-wrap {
+    @extend %wrap-block;
+    height: 561px;
+
+    .content {
+        @include flex-container();
+        flex-direction: column;
+        align-items: flex-start;
+        color: $second-color;
+        height: 100%;
+
+
+        .stock-title {
+            @include font-settings('RoadRadio', 700, 30px, 30.27px);
+            border-left: 6px solid $main-color;
+            padding-left: 9px;
+            margin-bottom: 54px;
+        }
+
+        .stock-slider {
+            @include flex-container();
+            flex-direction: row;
+
+            .stock-block {
+                text-align: left;
+                background-color: $card-color;
+                width: 363.55px;
+                height: 405px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                margin-right: 37px;
+
+                &__img {
+                    border: 3px solid $main-color;
+                }
+
+                &__title {
+                    @include font-settings('RoadRadio', 700, 18px, 18.16px);
+                    color: $main-color;
+                    margin: 29px 22px;
+                }
+
+                &__btn {
+                    @include details-btn();
+                    @include font-settings('RoadRadio', 700, 16px, 16.14px);
+                    color: $second-color;
+                    border-color: $second-color;
+                    margin-bottom: 27px;
+                    margin-left: 22px;
+                    margin-right: 22px;
+                }
+            }
+        }
+    }
+}
+
+
+.certificates-wrap {
+    @extend %wrap-block;
+    height: 624px;
+    background: url('../../../assets/images/sertificates-bg.png'), no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    .content {
+        @include flex-container();
+        flex-direction: column;
+        color: $second-color;
+        height: 100%;
+
+        .certificate-title {
+            @include font-settings('RoadRadio', 700, 30px, 30.27px);
+            border-left: 6px solid $main-color;
+            align-self: flex-start;
+            padding-left: 9px;
+            margin-bottom: 54px;
+        }
+
+        .certificates-list {
+            .certificate-item {
+                &__tool-img {
+                    position: absolute;
+                    width: 269px;
+                    height: 197px;
+                    transform: translate(-103px, 142px);
+                }
+            }
+        }
+    }
+}
+
+
+.reviews-wrap {
+    @extend %wrap-block;
+    height: 561px;
+
+    .content {
+        @include flex-container();
+        flex-direction: column;
+        align-items: flex-start;
+        color: $second-color;
+        height: 100%;
+
+
+        .reviews-title {
+            @include font-settings('RoadRadio', 700, 30px, 30.27px);
+            border-left: 6px solid $main-color;
+            padding-left: 9px;
+            margin-bottom: 54px;
+        }
+
+        .reviews-slider {
+            @include flex-container();
+            flex-direction: row;
+
+            .reviews-block {
+                text-align: left;
+                background-color: $card-color;
+                width: 359px;
+                height: 369px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                margin-right: 33px;
+
+                &__img {
+                    border: 3px solid $main-color;
+                }
+
+                &__title {
+                    @include font-settings('RoadRadio', 700, 18px, 18.16px);
+                    color: $main-color;
+                    margin: 29px 22px;
+                }
+
+                &__btn {
+                    @include details-btn();
+                    @include font-settings('RoadRadio', 700, 16px, 16.14px);
+                    color: $second-color;
+                    border-color: $second-color;
+                    margin-bottom: 27px;
+                    margin-left: 22px;
+                    margin-right: 22px;
+                }
+            }
+        }
+    }
+}
+
+
+.add-services-wrap {
+    @extend %wrap-block;
+    height: 385px;
+
+    .content {
+        @include flex-container();
+        flex-direction: column;
+        align-items: flex-start;
+        color: $second-color;
+        height: 100%;
+
+
+        .add-services-title {
+            @include font-settings('RoadRadio', 700, 30px, 30.27px);
+            border-left: 6px solid $main-color;
+            padding-left: 9px;
+            margin-bottom: 59px;
+        }
+
+        .add-services-list {
+            @include flex-container();
+            flex-direction: row;
+
+            .add-services-block {
+                text-align: center;
+                background-color: $card-color;
+                width: 316px;
+                height: 181px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+                margin-right: 33px;
+                padding: 17px 21px;
+
+                &__title {
+                    @include font-settings('RoadRadio', 700, 25px, 25.22px);
+                    color: $main-color;
+                    width: 255px;
+                    margin: auto;
+                }
+
+                &__desc {
+                    @include font-settings('Gilroy', 300, 14px, 16.14px);
+                    color: $second-color;
+                }
+            }
+        }
+    }
+}
+
+
+.usefull-articles-wrap {
+    @extend %wrap-block;
+    height: 561px;
+
+    .content {
+        @include flex-container();
+        flex-direction: column;
+        align-items: flex-start;
+        color: $second-color;
+        height: 100%;
+
+
+        .usefull-articles-title {
+            @include font-settings('RoadRadio', 700, 30px, 30.27px);
+            border-left: 6px solid $main-color;
+            padding-left: 9px;
+            margin-bottom: 54px;
+        }
+
+        .usefull-articles-slider {
+            @include flex-container();
+            flex-direction: row;
+
+            .usefull-articles-block {
+                text-align: left;
+                background-color: $card-color;
+                width: 363.55px;
+                height: 405px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                margin-right: 37px;
+
+                &__img {
+                    border: 3px solid $main-color;
+                }
+
+                &__title {
+                    @include font-settings('RoadRadio', 700, 18px, 18.16px);
+                    color: $main-color;
+                    margin: 29px 22px;
+                }
+
+                &__btn {
+                    @include details-btn();
+                    @include font-settings('RoadRadio', 700, 16px, 16.14px);
+                    color: $second-color;
+                    border-color: $second-color;
+                    margin-bottom: 27px;
+                    margin-left: 22px;
+                    margin-right: 22px;
+                }
+            }
+        }
+    }
+}
+
+
+.faq-wrap {
+    @extend %wrap-block;
+    //height: 561px;
+
+    .content {
+        @include flex-container();
+        flex-direction: column;
+        align-items: flex-start;
+        color: $second-color;
+        height: 100%;
+
+
+        .faq-title {
+            @include font-settings('RoadRadio', 700, 30px, 30.27px);
+            border-left: 6px solid $main-color;
+            padding-left: 9px;
+            margin-bottom: 54px;
+        }
+
+        .faq-block {
+            color: $second-color;
+
+            .faq-list {
+                @include flex-container();
+                flex-wrap: wrap;
+                list-style: none;
+
+                .faq-item {
+                    width: 563px;
+                    background-color: $card-color;
+                    margin-bottom: 8px;
+                    
+                    &__question {
+                        @include font-settings('Gilroy', 600, 20px, 23.86px);
+                    }
+
+                    &__answer {
+                        @include font-settings('Gilroy', 300, 14px, 16.14px);
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 12px;
+                        height: 20px;
+                        background: url('../../../assets/icons/faq-arrow.svg'), no-repeat;
+                        transform: translate(518px, -81px);
+                    }
+
+                    &:nth-child(2n+1) {
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.footer {
+    @extend %wrap-block;
+    height: 600px;
+
+    .content {
+        @include flex-container();
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        color: $second-color;
+        height: 100%;
+
+        .contacts {
+            @include font-settings('Gilroy', 400, 20px, 23.2px);
+
+            &__title {
+                @include font-settings('RoadRadio', 700, 30px, 30.27px);
+                border-left: 6px solid $main-color;
+                padding-left: 9px;
+                margin-bottom: 41px;
+                margin-top: 28px;
+            }
+
+            &__address {
+                margin-bottom: 26px;
+            }
+
+            &__phone {
+                margin-bottom: 26px;
+            }
+
+            &__mail {
+                margin-bottom: 59px;
+            }
+
+            .contacts-social-links {
+                @include flex-container();
+                @include font-settings('RoadRadio', 400, 20px, 20.18px);
+
+                &>li {
+                    list-style: none;
+                    margin-right: 51px;
+                }
+            }
+        }
+
+        .map-salon {
+            position: absolute;
+            right: 5px;
         }
     }
 }
