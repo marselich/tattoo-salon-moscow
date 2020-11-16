@@ -1,0 +1,1601 @@
+.main-wrap, .faq-wrap, .portfolio-wrap, .why-choose-us-wrap, .tattoo-courses-wrap, .certificates-wrap, .reviews-wrap, .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #18181b;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.slick-list {
+  overflow: hidden;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.slick-slide {
+  margin: 0 15px;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  background: url("../../../assets/icons/faq-arrow.svg") no-repeat;
+  background-color: #34B86E;
+  background-position: center;
+  font-size: 0;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1141px;
+}
+
+@media (max-width: 1232px) {
+  .content {
+    width: 552px;
+  }
+}
+
+.main-wrap {
+  background: url("../../../assets/images/training/first-bg.png"), no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+@media (max-width: 1232px) {
+  .main-wrap {
+    padding-bottom: 42px;
+  }
+}
+
+.main-wrap .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1141px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+}
+
+@media (max-width: 1232px) {
+  .main-wrap .header {
+    width: 531px;
+  }
+}
+
+.main-wrap .header .header-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.main-wrap .header .header-logo__svg {
+  width: 91px;
+  height: 76px;
+  background: url("../../../assets/icons/main-ico.svg"), no-repeat;
+}
+
+.main-wrap .header .header-logo__name {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14.05px;
+  line-height: 13.27px;
+  width: 112px;
+  color: #FFFFFF;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.main-wrap .header .header-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23.2px;
+}
+
+.main-wrap .header .header-nav > li {
+  list-style: none;
+  margin-right: 45px;
+}
+
+.main-wrap .header .header-nav > li a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.main-wrap .header .header-nav__training a {
+  color: #34B86E !important;
+  border-bottom: 1px solid #34B86E;
+}
+
+@media (max-width: 1232px) {
+  .main-wrap .header .header-nav {
+    display: none;
+  }
+}
+
+.main-wrap .header .back-call {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19.09px;
+  border-style: none;
+  color: #FFFFFF;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  padding: 12px 16px 13px;
+}
+
+.main-wrap .header__burger {
+  display: block;
+  position: relative;
+  width: 36px;
+  height: 31px;
+  z-index: 2;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  background: url("../../../assets/icons/burger-menu.svg"), no-repeat;
+}
+
+@media (max-width: 1232px) {
+  .main-wrap .content {
+    width: 531px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-top: 20px;
+  }
+}
+
+.main-wrap .content .consult-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 586px;
+  margin-right: 31px;
+  z-index: 1;
+}
+
+@media (max-width: 1232px) {
+  .main-wrap .content .consult-info {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.main-wrap .content .consult-info__title {
+  font-family: "RoadRadio";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 61px;
+  color: #FFFFFF;
+  width: 518px;
+}
+
+@media (max-width: 1232px) {
+  .main-wrap .content .consult-info__title {
+    font-family: "RoadRadio";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+.main-wrap .content .consult-info__subtitle {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23.86px;
+  color: #FFFFFF;
+  margin-top: 14px;
+}
+
+.main-wrap .content .consult-info__subtitle > span {
+  color: #34B86E;
+}
+
+@media (max-width: 1232px) {
+  .main-wrap .content .consult-info__subtitle {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    width: 281px;
+    margin-top: 22px;
+  }
+  .main-wrap .content .consult-info__subtitle br {
+    display: none;
+  }
+}
+
+.main-wrap .content .consult-info__btn {
+  font-family: "RoadRadio";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20.18px;
+  border-style: none;
+  color: #FFFFFF;
+  outline: none;
+  background-color: #34B86E;
+  -webkit-box-shadow: 3px 3px 0px #2A9659;
+          box-shadow: 3px 3px 0px #2A9659;
+  padding: 17px 30px 18px;
+  margin-top: 41px;
+}
+
+.main-wrap .content .consult-info__btn:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translate(3px, 3px);
+          transform: translate(3px, 3px);
+}
+
+@media (max-width: 1232px) {
+  .main-wrap .content .consult-info__btn {
+    font-family: "RoadRadio";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 14px 24px;
+    margin-top: 27px;
+  }
+}
+
+.main-wrap .content .consult-info .social-net-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "RoadRadio";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20.18px;
+  margin-top: 91px;
+}
+
+@media (max-width: 1232px) {
+  .main-wrap .content .consult-info .social-net-links {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 219px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-top: 19px;
+    row-gap: 7px;
+  }
+}
+
+.main-wrap .content .consult-info .social-net-links > li {
+  list-style: none;
+  margin-right: 5px;
+}
+
+.main-wrap .content .consult-info .social-net-links > li button {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19.09px;
+  border-style: none;
+  color: #FFFFFF;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  padding: 12px 16px 13px;
+  border-color: #34B86E;
+}
+
+@media (max-width: 1232px) {
+  .main-wrap .content .consult-info .social-net-links__instagram {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
+.main-wrap .content .consult-info .social-net-links .facebook-btn {
+  padding: 11px 22px 10px;
+}
+
+.main-wrap .content .consult-info .social-net-links .instagram-btn {
+  padding: 11px 18px 10px;
+}
+
+.main-wrap .content .consult-info .social-net-links .vk-btn {
+  padding: 11px 29px 10px;
+}
+
+.main-wrap .content .tattoo-master-img {
+  justify-self: flex-end;
+}
+
+@media (max-width: 1232px) {
+  .main-wrap .content .tattoo-master-img {
+    position: absolute;
+    width: 385px;
+    height: 318px;
+    -webkit-transform: translate(226px, 65px);
+            transform: translate(226px, 65px);
+    overflow: hidden;
+  }
+}
+
+.main-wrap .content .scroll-further {
+  font-family: "RoadRadio";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20.18px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  color: #34B86E;
+  position: absolute;
+  width: 172px;
+  right: 2%;
+}
+
+@media (max-width: 1232px) {
+  .main-wrap .content .scroll-further {
+    display: none;
+  }
+}
+
+.main-wrap .content .scroll-further::before {
+  content: '';
+  position: absolute;
+  height: 7.78px;
+  width: 12.73px;
+  background: url("../../../assets/icons/main-arrow.svg"), no-repeat;
+  -webkit-transform: rotate(90deg) translate(6px, 17px);
+          transform: rotate(90deg) translate(6px, 17px);
+}
+
+.main-wrap .content .scroll-further::after {
+  content: '';
+  position: absolute;
+  height: 7.78px;
+  width: 12.73px;
+  background: url("../../../assets/icons/main-arrow.svg"), no-repeat;
+  -webkit-transform: rotate(90deg) translate(6px, 198px);
+          transform: rotate(90deg) translate(6px, 198px);
+}
+
+.main-wrap .tattoo-tap-logo {
+  position: absolute;
+  height: 601px;
+  width: 57px;
+  background: url("../../../assets/images/training/tattoo-tap.png"), no-repeat;
+  left: 0px;
+  top: 0px;
+}
+
+@media (max-width: 1232px) {
+  .main-wrap .tattoo-tap-logo {
+    display: none;
+  }
+}
+
+.faq-wrap {
+  padding: 73px 0 83px;
+}
+
+.faq-wrap .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: #FFFFFF;
+  height: 100%;
+}
+
+.faq-wrap .content .faq-title {
+  font-family: "RoadRadio";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 30.27px;
+  border-left: 6px solid #34B86E;
+  padding-left: 9px;
+  margin-bottom: 54px;
+}
+
+.faq-wrap .content .faq-block {
+  color: #FFFFFF;
+}
+
+.faq-wrap .content .faq-block .faq-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.faq-wrap .content .faq-block .faq-list .faq-item {
+  width: 563px;
+  background-color: #101010;
+  margin-bottom: 8px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.faq-wrap .content .faq-block .faq-list .faq-item__question {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23.86px;
+  width: 390px;
+  margin: 18px 36px;
+}
+
+.faq-wrap .content .faq-block .faq-list .faq-item__question::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 20px;
+  background: url("../../../assets/icons/faq-arrow.svg"), no-repeat;
+  -webkit-transform: translate(490px, 0px);
+          transform: translate(490px, 0px);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.faq-wrap .content .faq-block .faq-list .faq-item__answer {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16.14px;
+  display: none;
+  width: 452px;
+  margin: 22px 36px;
+}
+
+.faq-wrap .content .faq-block .faq-list .faq-item:nth-child(2n+1) {
+  margin-right: 15px;
+}
+
+@media (max-width: 1232px) {
+  .faq-wrap .content .faq-block .faq-list .faq-item:nth-child(2n+1) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 1232px) {
+  .faq-wrap .content .faq-block .faq-list .faq-item {
+    margin-bottom: 15px;
+  }
+}
+
+.faq-wrap .content .faq-block .faq-list .opened .faq-item__question {
+  color: #34B86E;
+}
+
+.faq-wrap .content .faq-block .faq-list .opened .faq-item__question::before {
+  -webkit-transform: translate(490px, 0px) rotate(90deg);
+          transform: translate(490px, 0px) rotate(90deg);
+  bac: #34B86E;
+}
+
+.portfolio-wrap {
+  padding: 70px 0 138px;
+}
+
+.portfolio-wrap .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #FFFFFF;
+}
+
+.portfolio-wrap .content::after {
+  content: '';
+  width: 736px;
+  height: 817px;
+  position: absolute;
+  right: 0;
+  background-color: #34B86E;
+  z-index: -1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+@media (max-width: 1232px) {
+  .portfolio-wrap .content::after {
+    width: 236px;
+    height: 390px;
+    -webkit-transform: translateY(-110%);
+            transform: translateY(-110%);
+  }
+}
+
+.portfolio-wrap .content .portfolio-imgs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 1155px;
+}
+
+@media (max-width: 1232px) {
+  .portfolio-wrap .content .portfolio-imgs {
+    width: 540px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-column-gap: 27px;
+            column-gap: 27px;
+    row-gap: 26px;
+  }
+}
+
+.portfolio-wrap .content .portfolio-imgs .portfolio-info {
+  width: 339px;
+  margin-right: 29px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.portfolio-wrap .content .portfolio-imgs .portfolio-info__title {
+  font-family: "RoadRadio";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 30.27px;
+  border-left: 6px solid #34B86E;
+  padding-left: 9px;
+}
+
+.portfolio-wrap .content .portfolio-imgs .portfolio-info__desc {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20.88px;
+  margin-left: 15px;
+}
+
+@media (max-width: 1232px) {
+  .portfolio-wrap .content .portfolio-imgs .portfolio-info__desc {
+    width: 330px;
+  }
+}
+
+@media (max-width: 1232px) {
+  .portfolio-wrap .content .portfolio-imgs .portfolio-info {
+    width: 540px;
+  }
+}
+
+.portfolio-wrap .content .portfolio-imgs .img-block img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 1232px) {
+  .portfolio-wrap .content .portfolio-imgs .img-block img {
+    width: 160px;
+    height: 201px;
+  }
+}
+
+@media (max-width: 1232px) {
+  .portfolio-wrap .content .portfolio-imgs .img-block:nth-child(n) {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1232px) {
+  .portfolio-wrap .content .portfolio-imgs .img-block {
+    margin-right: 32px;
+    height: 201px;
+  }
+}
+
+@media (max-width: 1232px) {
+  .portfolio-wrap .content .portfolio-imgs .img-block:nth-child(3n+1) {
+    margin-right: 0;
+  }
+}
+
+.portfolio-wrap .content .portfolio-imgs .img-block:nth-child(2) img {
+  width: 787px;
+  height: 285px;
+}
+
+@media (max-width: 1232px) {
+  .portfolio-wrap .content .portfolio-imgs .img-block:nth-child(2) img {
+    width: 160px;
+    height: 201px;
+  }
+}
+
+.portfolio-wrap .content .portfolio-imgs .img-block:nth-child(4) {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.portfolio-wrap .content .portfolio-imgs .img-block:nth-child(4) img {
+  width: 463px;
+  height: 200px;
+}
+
+@media (max-width: 1232px) {
+  .portfolio-wrap .content .portfolio-imgs .img-block:nth-child(4) img {
+    width: 160px;
+    height: 201px;
+  }
+}
+
+@media (max-width: 1232px) {
+  .portfolio-wrap .content .portfolio-imgs .img-block:nth-child(4) {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+.portfolio-wrap .content .portfolio-imgs .img-block:nth-child(5) {
+  position: absolute;
+  -webkit-transform: translateY(121%);
+          transform: translateY(121%);
+}
+
+.portfolio-wrap .content .portfolio-imgs .img-block:nth-child(5) img {
+  width: 463px;
+  height: 200px;
+}
+
+@media (max-width: 1232px) {
+  .portfolio-wrap .content .portfolio-imgs .img-block:nth-child(5) img {
+    width: 160px;
+    height: 201px;
+  }
+}
+
+@media (max-width: 1232px) {
+  .portfolio-wrap .content .portfolio-imgs .img-block:nth-child(5) {
+    position: relative;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+.why-choose-us-wrap {
+  height: 551px;
+  background: url("../../../assets/images/training/services-bg.png"), no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.why-choose-us-wrap .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: #FFFFFF;
+  height: 100%;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.why-choose-us-wrap .content .choose-us-info {
+  margin-right: 20px;
+}
+
+.why-choose-us-wrap .content .choose-us-info .choose-us-title {
+  margin-bottom: 75px;
+  margin-top: 25px;
+}
+
+.why-choose-us-wrap .content .choose-us-info .choose-us-title__title {
+  font-family: "RoadRadio";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 30.27px;
+  border-left: 6px solid #34B86E;
+  padding-left: 9px;
+}
+
+@media (max-width: 1232px) {
+  .why-choose-us-wrap .content .choose-us-info .choose-us-title__title {
+    font-family: "RoadRadio";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 25px;
+  }
+}
+
+.why-choose-us-wrap .content .choose-us-info .choose-us-title__subtitle {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20.88px;
+  margin-left: 15px;
+  width: 307px;
+}
+
+@media (max-width: 1232px) {
+  .why-choose-us-wrap .content .choose-us-info .choose-us-title__subtitle {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+.why-choose-us-wrap .content .choose-us-info .choose-us-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 44px;
+          column-gap: 44px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 307px;
+  margin-left: 21px;
+  list-style: none;
+}
+
+@media (max-width: 1232px) {
+  .why-choose-us-wrap .content .choose-us-info .choose-us-list {
+    -webkit-column-gap: 25px;
+            column-gap: 25px;
+  }
+}
+
+.why-choose-us-wrap .content .choose-us-info .choose-us-list .choose-us-item {
+  text-align: left;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.why-choose-us-wrap .content .choose-us-info .choose-us-list .choose-us-item::before {
+  content: '';
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  background-color: #34B86E;
+  -webkit-transform: translate(-50px, 0px);
+          transform: translate(-50px, 0px);
+}
+
+.why-choose-us-wrap .content .tattoo-guy {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+@media (max-width: 1232px) {
+  .why-choose-us-wrap .content .tattoo-guy {
+    display: none;
+  }
+}
+
+.tattoo-courses-wrap {
+  padding: 95px 0 68px;
+}
+
+.tattoo-courses-wrap .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: #FFFFFF;
+  height: 100%;
+}
+
+.tattoo-courses-wrap .content .tattoo-courses-title {
+  margin-bottom: 57px;
+}
+
+.tattoo-courses-wrap .content .tattoo-courses-title__title {
+  font-family: "RoadRadio";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 30.27px;
+  border-left: 6px solid #34B86E;
+  padding-left: 9px;
+}
+
+@media (max-width: 1232px) {
+  .tattoo-courses-wrap .content .tattoo-courses-title__title {
+    font-family: "RoadRadio";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 25px;
+  }
+}
+
+.tattoo-courses-wrap .content .tattoo-courses-title__subtitle {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20.88px;
+  margin-left: 15px;
+  margin-top: 10px;
+  width: 374px;
+}
+
+@media (max-width: 1232px) {
+  .tattoo-courses-wrap .content .tattoo-courses-title__subtitle {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 17px;
+    width: 239px;
+  }
+}
+
+.tattoo-courses-wrap .content .courses-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.tattoo-courses-wrap .content .courses-cards .course-card {
+  background-color: #101010;
+  width: 256px;
+  height: 419px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 37px;
+}
+
+.tattoo-courses-wrap .content .courses-cards .course-card .course-title {
+  margin-left: 19px;
+  margin-top: 28px;
+}
+
+.tattoo-courses-wrap .content .courses-cards .course-card .course-title__name {
+  font-family: "RoadRadio";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+.tattoo-courses-wrap .content .courses-cards .course-card .course-title__price {
+  font-family: "RoadRadio";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 25px;
+  color: #34B86E;
+  margin-top: 14px;
+}
+
+.tattoo-courses-wrap .content .courses-cards .course-card .course-lessons {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 203px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 49px;
+  list-style: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.tattoo-courses-wrap .content .courses-cards .course-card .course-lessons > li::before {
+  content: '';
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  background-color: #34B86E;
+  -webkit-transform: translate(-30px, 0px);
+          transform: translate(-30px, 0px);
+}
+
+.tattoo-courses-wrap .content .courses-cards .course-card__btn {
+  font-family: "RoadRadio";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20.18px;
+  border-style: none;
+  color: #FFFFFF;
+  outline: none;
+  background-color: #34B86E;
+  -webkit-box-shadow: 3px 3px 0px #2A9659;
+          box-shadow: 3px 3px 0px #2A9659;
+  padding: 17px 30px 18px;
+  font-family: "RoadRadio";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  padding: 8px 33px;
+  margin-bottom: 44px;
+  margin-left: 19px;
+}
+
+.tattoo-courses-wrap .content .courses-cards .course-card__btn:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translate(3px, 3px);
+          transform: translate(3px, 3px);
+}
+
+.tattoo-courses-wrap .content .courses-cards .slick-prev {
+  right: 400px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  top: -84px;
+}
+
+@media (max-width: 1232px) {
+  .tattoo-courses-wrap .content .courses-cards .slick-prev {
+    right: 110px;
+  }
+}
+
+.tattoo-courses-wrap .content .courses-cards .slick-next {
+  right: 326px;
+  top: -84px;
+}
+
+@media (max-width: 1232px) {
+  .tattoo-courses-wrap .content .courses-cards .slick-next {
+    right: 36px;
+  }
+}
+
+.certificates-wrap {
+  padding: 27px 0 55px;
+  background: url("../../../assets/images/training/sertificates-bg.png"), no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.certificates-wrap .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #FFFFFF;
+  height: 100%;
+}
+
+.certificates-wrap .content .certificate-title {
+  font-family: "RoadRadio";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 30.27px;
+  border-left: 6px solid #34B86E;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding-left: 9px;
+  margin-bottom: 54px;
+}
+
+@media (max-width: 1232px) {
+  .certificates-wrap .content .certificate-title {
+    font-family: "RoadRadio";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 25px;
+  }
+}
+
+.certificates-wrap .content .certificates-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+@media (max-width: 1232px) {
+  .certificates-wrap .content .certificates-list {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.certificates-wrap .content .certificates-list .certificate-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.certificates-wrap .content .certificates-list .slick-prev {
+  right: 400px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  top: -84px;
+}
+
+@media (max-width: 1232px) {
+  .certificates-wrap .content .certificates-list .slick-prev {
+    right: 110px;
+  }
+}
+
+.certificates-wrap .content .certificates-list .slick-next {
+  right: 326px;
+  top: -84px;
+}
+
+@media (max-width: 1232px) {
+  .certificates-wrap .content .certificates-list .slick-next {
+    right: 36px;
+  }
+}
+
+.reviews-wrap {
+  height: 561px;
+}
+
+.reviews-wrap .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: #FFFFFF;
+  height: 100%;
+}
+
+.reviews-wrap .content .reviews-title {
+  font-family: "RoadRadio";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 30.27px;
+  border-left: 6px solid #34B86E;
+  padding-left: 9px;
+  margin-bottom: 54px;
+}
+
+@media (max-width: 1232px) {
+  .reviews-wrap .content .reviews-title {
+    font-family: "RoadRadio";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 25px;
+  }
+}
+
+.reviews-wrap .content .reviews-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  width: 100%;
+}
+
+.reviews-wrap .content .reviews-slider .reviews-block {
+  text-align: left;
+  background-color: #101010;
+  width: 359px;
+  height: 369px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 33px;
+}
+
+.reviews-wrap .content .reviews-slider .reviews-block__name {
+  font-family: "RoadRadio";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18.16px;
+  color: #34B86E;
+  margin-left: 14px;
+}
+
+.reviews-wrap .content .reviews-slider .reviews-block__comment {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 14px;
+  margin-right: 27px;
+}
+
+.reviews-wrap .content .reviews-slider .reviews-block .reviews-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  margin-left: 14px;
+  -webkit-column-gap: 24px;
+          column-gap: 24px;
+  row-gap: 8px;
+}
+
+.reviews-wrap .content .reviews-slider .reviews-block .reviews-grid__img {
+  border: 1px solid #34B86E;
+}
+
+.reviews-wrap .content .reviews-slider .slick-prev {
+  right: 400px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  top: -84px;
+}
+
+@media (max-width: 1232px) {
+  .reviews-wrap .content .reviews-slider .slick-prev {
+    right: 110px;
+  }
+}
+
+.reviews-wrap .content .reviews-slider .slick-next {
+  right: 326px;
+  top: -84px;
+}
+
+@media (max-width: 1232px) {
+  .reviews-wrap .content .reviews-slider .slick-next {
+    right: 36px;
+  }
+}
+
+.footer {
+  height: 600px;
+}
+
+@media (max-width: 1232px) {
+  .footer {
+    height: 996px;
+  }
+}
+
+.footer .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #FFFFFF;
+  height: 100%;
+}
+
+@media (max-width: 1232px) {
+  .footer .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+.footer .content .contacts {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23.2px;
+}
+
+@media (max-width: 1232px) {
+  .footer .content .contacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.footer .content .contacts__title {
+  font-family: "RoadRadio";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 30.27px;
+  border-left: 6px solid #34B86E;
+  padding-left: 9px;
+  margin-bottom: 41px;
+  margin-top: 28px;
+}
+
+@media (max-width: 1232px) {
+  .footer .content .contacts__title {
+    font-family: "RoadRadio";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 25px;
+    width: 520px;
+    margin-bottom: 28px;
+  }
+}
+
+.footer .content .contacts__address {
+  margin-bottom: 26px;
+}
+
+.footer .content .contacts__phone {
+  margin-bottom: 26px;
+}
+
+.footer .content .contacts__mail {
+  margin-bottom: 59px;
+}
+
+@media (max-width: 1232px) {
+  .footer .content .contacts__mail {
+    margin-bottom: 0;
+  }
+}
+
+.footer .content .contacts .contacts-social-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "RoadRadio";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20.18px;
+}
+
+.footer .content .contacts .contacts-social-links > li {
+  list-style: none;
+  margin-right: 51px;
+}
+
+@media (max-width: 1232px) {
+  .footer .content .contacts .contacts-social-links > li:nth-child(3) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 1232px) {
+  .footer .content .contacts .contacts-social-links {
+    font-family: "RoadRadio";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+.footer .content .map-salon {
+  position: absolute;
+  right: 5px;
+}
+
+@media (max-width: 1232px) {
+  .footer .content .map-salon {
+    position: relative;
+    display: block;
+    width: 557px;
+    margin-top: 44px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

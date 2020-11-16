@@ -17,7 +17,25 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-    $('.masters-cards').slick({
+    $('.courses-cards').slick({
+        arrows: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [
+            {
+                breakpoint: 1201,
+                settings: {
+                    arrows: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    }); 
+});
+
+$(document).ready(function(){
+    $('.certificates-list').slick({
         arrows: true,
         slidesToShow: 3,
         slidesToScroll: 3,
@@ -96,21 +114,3 @@ $(function() {
       });
     });
   });
-
-
-  //popup
-
-  $(document).ready(function(){
-      $('.consult-info__btn').click(() => {
-        $('.main-popup').css('display', 'flex');
-      });
-
-
-      $('.main-popup__close-btn').click(() => {
-        $('.main-popup').css('display', 'none');
-      });
-    
-      $('.main-popup').click(() => {
-        $('.main-popup').css('display', 'none');
-      });
-});

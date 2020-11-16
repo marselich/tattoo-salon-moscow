@@ -11,6 +11,22 @@
 </head>
 
 <body>
+    <div class="main-popup">  
+        <button class="main-popup__close-btn"></button>  
+        <article class="popup-container">
+           <h2 class="popup-container__title">
+                Запишись на бесплатную консультацию
+           </h2>
+           <h3 class="popup-container__subtitle">
+                Запишись на бесплатную консультацию в течении <span>15 минут</span> и получи скидку <span>20% на первый сеанс</span>
+           </h3>
+           <input type="text" name="name" class="popup-container__name" placeholder="Ваше имя">
+           <input type="tel" name="tel" class="popup-container__tel" placeholder="Ваш телефон">
+           <button class="popup-container__btn">
+               оставить заявку
+            </button>
+        </article>
+    </div>
     <div class="main-wrap">
         <header class="header">
             <div class="header-logo">
@@ -44,7 +60,7 @@
                     <li class="social-net-links__vk"><button class="vk-btn">VK</button></li>
                 </ul>
             </section>
-            <img src="../../assets/images/tattoo-master.png" alt="Тату мастер" class="tattoo-master-img">
+            <img src="../../assets/images/main/tattoo-master.png" alt="Тату мастер" class="tattoo-master-img">
             <div class="scroll-further">Листай дальше</div>
         </div>
         <div class="tattoo-tap-logo"></div>
@@ -53,53 +69,54 @@
         <div class="master-info-wrap">
             <div class="content">
                 <div class="owl-img">
-                    <img src="../../assets/images/owl.png" alt="" class="owl-tattoo">
+                    <img src="../../assets/images/main/owl.png" alt="" class="owl-tattoo">
                 </div>
-                <section class="about-master">
-                    <h2 class="about-master__name">Тату мастер Михаил Таптыгин</h2>
-                    <div class="master-info">
-                        <div class="master-achives">
-                            <div class="master-achives__name">Михаил Таптыгин.</div>
-                            <ul class="master-achives__list">
-                                <li>6 лет занимаюсь тату.</li>
-                                <li>Более 3000 довольных клиентов.</li>
-                                <li>Успешно обучил 15 человек.</li>
-                                <li>Основатель тату салона Tattoo_tap в Москве.</li>
-                                <li>Владелец тату студии Tattoo_top, участник номинации лучший тату салон в Москве.</li>
-                            </ul>
-                        </div>
-                        <div class="master-info__education">
-                            Проходил мастер классы у известных тату мастеров. Дмитрий Трошин, Полина Гаевская, Олег
-                            Шепеленко, Андрей Колбасин Мой приоритет - индивидуальный подход и создание неповторимого
-                            стиля
-                        </div>
+                <div class="master-info">
+                    <h2 class="master-info__name">Тату мастер Михаил Таптыгин</h2>
+                    <div class="master-achives">
+                        <div class="master-achives__name">Михаил Таптыгин.</div>
+                        <ul class="master-achives__list">
+                            <li><strong>6 лет</strong> занимаюсь тату.</li>
+                            <li>Более <strong>3000 довольных клиентов</strong>.</li>
+                            <li>Успешно <strong>обучил 15 человек</strong>.</li>
+                            <li>Основатель тату салона <strong>Tattoo_tap</strong> в Москве.</li>
+                            <li>Владелец тату студии <strong>Tattoo_top</strong>, участник номинации лучший тату салон в
+                                Москве.</li>
+                        </ul>
                     </div>
-                    <div class="master-services">
-                        <article class="master-services-block">
-                            <div class="master-services-block__logo"></div>
-                            <div class="master-services-block__info">
-                                В студии художественной татуировки tatto_tap вы можете сделать татуировку любой
-                                сложности, записавшись предварительно в наш тату салон на бесплатную консультацию.
-                            </div>
-                        </article>
-                        <article class="master-services-block">
-                            <div class="master-services-block__logo"></div>
-                            <div class="master-services-block__info">
-                                В студии мастера гарантируют полную стерильность и безопасность. Мастера тату с опытом
-                                работы от 3 лет. Переносим на кожу и маленькие черно-белые изображения и объемные
-                                варианты.
-                            </div>
-                        </article>
-                        <article class="master-services-block">
-                            <div class="master-services-block__logo"></div>
-                            <div class="master-services-block__info">
-                                Мы работаем как с вашими примерами работ, так и создаем индивидуальные эскизы для вас,
-                                если вы записываетесь на консультацию.
-                            </div>
-                        </article>
-                    </div>
-                    <button class="about-master__btn">записаться на бесплатную консультацию</button>
-                </section>
+                </div>
+                <div class="master-education">
+                    Проходил мастер классы у известных тату мастеров. Дмитрий Трошин, Полина Гаевская, Олег
+                    Шепеленко, Андрей Колбасин Мой приоритет - индивидуальный подход и создание неповторимого
+                    стиля
+                </div>
+                <div class="master-services">
+                    <article class="master-services-block">
+                        <div class="master-services-block__logo"></div>
+                        <div class="master-services-block__info">
+                            В студии художественной татуировки <strong>tatto_tap</strong> вы можете сделать татуировку
+                            любой
+                            сложности, записавшись предварительно в наш тату салон на бесплатную консультацию.
+                        </div>
+                    </article>
+                    <article class="master-services-block">
+                        <div class="master-services-block__logo"></div>
+                        <div class="master-services-block__info">
+                            В студии мастера гарантируют полную стерильность и безопасность. Мастера тату с опытом
+                            работы <strong>от 3 лет</strong>. Переносим на кожу и маленькие черно-белые изображения и
+                            объемные
+                            варианты.
+                        </div>
+                    </article>
+                    <article class="master-services-block">
+                        <div class="master-services-block__logo"></div>
+                        <div class="master-services-block__info">
+                            Мы работаем как с вашими примерами работ, так и создаем индивидуальные эскизы для вас,
+                            если вы записываетесь на консультацию.
+                        </div>
+                    </article>
+                </div>
+                <button class="about-master-btn">записаться на бесплатную консультацию</button>
                 <h2 class="about-us-text">о нас</h2>
             </div>
         </div>
@@ -148,37 +165,38 @@
                         </p>
                     </section>
                     <div class="img-block">
-                        <img src="../../assets/images/snake.png" alt="Татуировка змея" class="snake-img">
+                        <img src="../../assets/images/main/snake.png" alt="Татуировка змея" class="snake-img">
                     </div>
                     <div class="img-block">
-                        <img src="../../assets/images/angel.png" alt="Татуировка ангел" class="angel-img">
+                        <img src="../../assets/images/main/angel.png" alt="Татуировка ангел" class="angel-img">
                     </div>
                     <div class="img-block">
-                    <img src="../../assets/images/simple-flower.png" alt="Татуировка цветок" class="simple-flower-img">
+                        <img src="../../assets/images/main/simple-flower.png" alt="Татуировка цветок"
+                            class="simple-flower-img">
                     </div>
                     <div class="img-block">
-                    <img src="../../assets/images/ninja.png" alt="Татуировка ниндзя" class="ninja-img">
+                        <img src="../../assets/images/main/ninja.png" alt="Татуировка ниндзя" class="ninja-img">
                     </div>
                     <div class="img-block">
-                    <img src="../../assets/images/rhino.png" alt="Татуировка носорог" class="rhino-img">
+                        <img src="../../assets/images/main/rhino.png" alt="Татуировка носорог" class="rhino-img">
                     </div>
                     <div class="img-block">
-                    <img src="../../assets/images/heart.png" alt="Татуировка сердце">
+                        <img src="../../assets/images/main/heart.png" alt="Татуировка сердце">
                     </div>
                     <div class="img-block">
-                    <img src="../../assets/images/cool-flower.png" alt="Татуировка цветок">
+                        <img src="../../assets/images/main/cool-flower.png" alt="Татуировка цветок">
                     </div>
                     <div class="img-block">
-                    <img src="../../assets/images/kis-kis.png" alt="Татуировка кот">
+                        <img src="../../assets/images/main/kis-kis.png" alt="Татуировка кот">
                     </div>
                     <div class="img-block">
-                    <img src="../../assets/images/follow-the-dream.png" alt="Татуировка надпись">
+                        <img src="../../assets/images/main/follow-the-dream.png" alt="Татуировка надпись">
                     </div>
                     <div class="img-block">
-                    <img src="../../assets/images/evgenii.png" alt="Татуировка надпись">
+                        <img src="../../assets/images/main/evgenii.png" alt="Татуировка надпись">
                     </div>
                     <div class="img-block">
-                    <img src="../../assets/images/bat.png" alt="Татуировка летучая мышь">
+                        <img src="../../assets/images/main/bat.png" alt="Татуировка летучая мышь">
                     </div>
                 </div>
                 <div class="portfolio-btns">
@@ -238,7 +256,7 @@
                         </article>
                     </div>
                 </section>
-                <img src="../../assets/images/tattoo-guy.png" alt="Тату мастер" class="tattoo-guy">
+                <img src="../../assets/images/main/tattoo-guy.png" alt="Тату мастер" class="tattoo-guy">
             </div>
         </div>
         <div class="our-masters-wrap">
@@ -253,7 +271,7 @@
                 </div>
                 <div class="masters-cards">
                     <div class="master-card">
-                        <img src="../../assets/images/tattoo-woman.png" alt="Фото тату мастера"
+                        <img src="../../assets/images/main/tattoo-woman.png" alt="Фото тату мастера"
                             class="master-card__img">
                         <h3 class="master-card__name">
                             Андрей Юнусов
@@ -267,7 +285,7 @@
                         </a>
                     </div>
                     <div class="master-card">
-                        <img src="../../assets/images/tattoo-woman.png" alt="Фото тату мастера"
+                        <img src="../../assets/images/main/tattoo-woman.png" alt="Фото тату мастера"
                             class="master-card__img">
                         <h3 class="master-card__name">
                             Андрей Юнусов
@@ -281,7 +299,7 @@
                         </a>
                     </div>
                     <div class="master-card">
-                        <img src="../../assets/images/tattoo-woman.png" alt="Фото тату мастера"
+                        <img src="../../assets/images/main/tattoo-woman.png" alt="Фото тату мастера"
                             class="master-card__img">
                         <h3 class="master-card__name">
                             Андрей Юнусов
@@ -299,7 +317,7 @@
         </div>
         <div class="skills-wrap">
             <div class="content">
-                <img src="../../assets/images/tattoo-tool.png" alt="Тату машинка" class="tattoo-tool">
+                <img src="../../assets/images/main/tattoo-tool.png" alt="Тату машинка" class="tattoo-tool">
                 <section class="skill-info">
                     <h2 class="skill-info__title">
                         НАВЫКИ МАСТЕРОВ
@@ -312,33 +330,33 @@
                         процедура, необходимо сохранять «свежий» взгляд и одновременно постоянно совершенствуя свои
                         навыки. Залог успеха – это постоянная практика, творческие вызовы и компания единомышленников.
                     </p>
-                    <div class="skill-stat">
-                        <article class="stat-block">
-                            <div class="stat-block__num">
-                                8
-                            </div>
-                            <div class="stat-block__name">
-                                Мастеров
-                            </div>
-                        </article>
-                        <article class="stat-block">
-                            <div class="stat-block__num">
-                                1900
-                            </div>
-                            <div class="stat-block__name">
-                                Клиентов
-                            </div>
-                        </article>
-                        <article class="stat-block">
-                            <div class="stat-block__num">
-                                3300
-                            </div>
-                            <div class="stat-block__name">
-                                Татуировок
-                            </div>
-                        </article>
-                    </div>
                 </section>
+                <div class="skill-stat">
+                    <article class="stat-block">
+                        <div class="stat-block__num">
+                            8
+                        </div>
+                        <div class="stat-block__name">
+                            Мастеров
+                        </div>
+                    </article>
+                    <article class="stat-block">
+                        <div class="stat-block__num">
+                            1900
+                        </div>
+                        <div class="stat-block__name">
+                            Клиентов
+                        </div>
+                    </article>
+                    <article class="stat-block">
+                        <div class="stat-block__num">
+                            3300
+                        </div>
+                        <div class="stat-block__name">
+                            Татуировок
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
         <div class="stock-wrap">
@@ -348,7 +366,7 @@
                 </h2>
                 <div class="stock-slider">
                     <section class="stock-block">
-                        <img src="../../assets/images/using-tool.png" alt="Тату машинка" class="stock-block__img">
+                        <img src="../../assets/images/main/using-tool.png" alt="Тату машинка" class="stock-block__img">
                         <h3 class="stock-block__title">
                             Весь октябрь скидки на мини тату 20% успей сделать татуировку своей мечты.
                         </h3>
@@ -357,7 +375,7 @@
                         </a>
                     </section>
                     <section class="stock-block">
-                        <img src="../../assets/images/using-tool.png" alt="Тату машинка" class="stock-block__img">
+                        <img src="../../assets/images/main/using-tool.png" alt="Тату машинка" class="stock-block__img">
                         <h3 class="stock-block__title">
                             Хочешь тату? Тогда тебе к нам! Сделаем скидку 15% на любую тату по промокоду «хочу тату у
                             вас»
@@ -367,7 +385,7 @@
                         </a>
                     </section>
                     <section class="stock-block">
-                        <img src="../../assets/images/using-tool.png" alt="Тату машинка" class="stock-block__img">
+                        <img src="../../assets/images/main/using-tool.png" alt="Тату машинка" class="stock-block__img">
                         <h3 class="stock-block__title">
                             Подари сертификат мужу парню на день рождение.
                         </h3>
@@ -376,7 +394,7 @@
                         </a>
                     </section>
                     <section class="stock-block">
-                        <img src="../../assets/images/using-tool.png" alt="Тату машинка" class="stock-block__img">
+                        <img src="../../assets/images/main/using-tool.png" alt="Тату машинка" class="stock-block__img">
                         <h3 class="stock-block__title">
                             Подари сертификат мужу парню на день рождение.
                         </h3>
@@ -385,7 +403,7 @@
                         </a>
                     </section>
                     <section class="stock-block">
-                        <img src="../../assets/images/using-tool.png" alt="Тату машинка" class="stock-block__img">
+                        <img src="../../assets/images/main/using-tool.png" alt="Тату машинка" class="stock-block__img">
                         <h3 class="stock-block__title">
                             Подари сертификат мужу парню на день рождение.
                         </h3>
@@ -403,8 +421,10 @@
                 </h2>
                 <div class="certificates-list">
                     <div class="certificate-item">
-                        <img src="../../assets/images/certificate.png" alt="Сертификат" class="certificate-item__img">
-                        <img src="../../assets/images/tattoo-tool.png" alt="Тату машинка"
+                        <img src="../../assets/images/main/certificate.png" alt="Сертификат" class="certificate-item__img">
+                    </div>
+                    <div class="certificate-item">
+                        <img src="../../assets/images/main/tattoo-tool.png" alt="Тату машинка"
                             class="certificate-item__tool-img">
                     </div>
                 </div>
@@ -426,10 +446,10 @@
                             квалификации.
                         </p>
                         <div class="reviews-grid">
-                            <img src="../../assets/images/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
-                            <img src="../../assets/images/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
-                            <img src="../../assets/images/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
-                            <img src="../../assets/images/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
+                            <img src="../../assets/images/main/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
+                            <img src="../../assets/images/main/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
+                            <img src="../../assets/images/main/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
+                            <img src="../../assets/images/main/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
                         </div>
                     </section>
                     <section class="reviews-block">
@@ -442,10 +462,10 @@
                             квалификации.
                         </p>
                         <div class="reviews-grid">
-                            <img src="../../assets/images/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
-                            <img src="../../assets/images/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
-                            <img src="../../assets/images/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
-                            <img src="../../assets/images/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
+                            <img src="../../assets/images/main/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
+                            <img src="../../assets/images/main/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
+                            <img src="../../assets/images/main/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
+                            <img src="../../assets/images/main/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
                         </div>
                     </section>
                     <section class="reviews-block">
@@ -458,10 +478,10 @@
                             квалификации.
                         </p>
                         <div class="reviews-grid">
-                            <img src="../../assets/images/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
-                            <img src="../../assets/images/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
-                            <img src="../../assets/images/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
-                            <img src="../../assets/images/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
+                            <img src="../../assets/images/main/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
+                            <img src="../../assets/images/main/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
+                            <img src="../../assets/images/main/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
+                            <img src="../../assets/images/main/mini-cat.png" alt="Татуировка кота" class="reviews-grid__img">
                         </div>
                     </section>
                 </div>
@@ -510,7 +530,7 @@
                 </h2>
                 <div class="usefull-articles-slider">
                     <section class="usefull-articles-block">
-                        <img src="../../assets/images/using-tool.png" alt="Тату машинка"
+                        <img src="../../assets/images/main/using-tool.png" alt="Тату машинка"
                             class="usefull-articles-block__img">
                         <h3 class="usefull-articles-block__title">
                             Весь октябрь скидки на мини тату 20% успей
@@ -528,7 +548,7 @@
                         </a>
                     </section>
                     <section class="usefull-articles-block">
-                        <img src="../../assets/images/using-tool.png" alt="Тату машинка"
+                        <img src="../../assets/images/main/using-tool.png" alt="Тату машинка"
                             class="usefull-articles-block__img">
                         <h3 class="usefull-articles-block__title">
                             Весь октябрь скидки на мини тату 20% успей
@@ -546,7 +566,7 @@
                         </a>
                     </section>
                     <section class="usefull-articles-block">
-                        <img src="../../assets/images/using-tool.png" alt="Тату машинка"
+                        <img src="../../assets/images/main/using-tool.png" alt="Тату машинка"
                             class="usefull-articles-block__img">
                         <h3 class="usefull-articles-block__title">
                             Весь октябрь скидки на мини тату 20% успей
@@ -661,7 +681,7 @@
                     <li class="contacts-social-links__vk"><a class="vk-btn">Vk</a></li>
                 </ul>
             </div>
-            <img src="../../assets/images/map-salon.png" alt="" class="map-salon">
+            <img src="../../assets/images/main/map-salon.png" alt="" class="map-salon">
         </div>
     </footer>
 </body>
