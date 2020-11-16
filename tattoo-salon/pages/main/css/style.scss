@@ -5,8 +5,9 @@ $bg-color: #18181b;
 $card-color: #101010;
 
 $width-content: 1141px;
+$width-mobile-content: 552px;
 
-$mobile-max-width: 1300px;
+$mobile-max-width: 1232px;
 
 @mixin font-settings ($family, $weight, $size, $height) {
     font-family: $family;
@@ -64,6 +65,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: $bg-color;
+    overflow-x: hidden;
 }
 
 h1,
@@ -75,26 +77,135 @@ ul {
     padding: 0;
 }
 
-/* h1 {
-    @include font-settings ('RoadRadio', 900, 60px, 61px);
-} */
+img {
+    object-fit: cover;
+}
+
+.slick-track {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+
+}
+
+.slick-list {
+    overflow: hidden;
+    justify-content: space-between;
+    // margin-left: -30px;
+    // margin-right: -30px;
+}
+
+.slick-slide {
+    margin: 0 15px;
+}
+
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    background: url('../../../assets/icons/faq-arrow.svg') no-repeat;
+    background-color: $main-color;
+    background-position: center;
+    font-size: 0;
+}
 
 .content {
     @include flex-container();
     width: $width-content;
+
+    @media (max-width: $mobile-max-width) {
+        width: $width-mobile-content;
+    }
 }
+
+
+.main-popup {
+    @extend %wrap-block;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background: rgba(41, 41, 41, 0.6);
+    z-index: 10;
+    
+
+    &__close-btn {
+        background: url('../../../assets/images/main/close-btn.png') no-repeat;
+        background-position: center;
+        height: 22px;
+        width: 22px;
+        box-sizing: border-box;
+        transform: translate(345px, -206px);
+        outline: none;
+    }
+
+    .popup-container {
+        display: flex;
+        width: 291px;
+        color: $second-color;
+        flex-direction: column;
+        padding: 16px 35px 47px 33px;
+        background-color: $card-color;
+
+        &__title {
+            @include font-settings ('RoadRadio', 900, 30px, 30px);
+            margin-bottom: 20px;   
+        }
+
+        &__subtitle {
+            @include font-settings('Gilroy', 400, 16px, 19px);
+            margin-bottom: 23px;
+
+            &>span {
+                color: $main-color;
+            }
+        }
+
+        &>input {
+            border: 1px solid $main-color;
+            margin-bottom: 23px;
+            @include font-settings('Gilroy', 400, 16px, 19px);
+            background-color: $card-color;
+            color: $second-color;
+            padding: 16px 0 15px 26px;
+        }
+
+        &__btn {
+            @include main-btn();
+        }
+    }
+}
+
+.main-popup_showed {
+    display: none;
+}
+
 
 .main-wrap {
     @extend %wrap-block;
-    background: url('../../../assets/images/first-bg.png'), no-repeat;
+    background: url('../../../assets/images/main/first-bg.png'), no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    height: 640px;
+
+    @media (max-width: $mobile-max-width) {
+        height: 584px;
+    }
 
     .header {
         @include flex-container();
         width: $width-content;
         justify-content: space-between;
         margin-top: 10px;
+
+        @media (max-width: $mobile-max-width) {
+            width: 531px;
+        }
 
         .header-logo {
             @include flex-container();
@@ -118,7 +229,6 @@ ul {
             @include flex-container();
             @include font-settings('Gilroy', 400, 20px, 23.2px);
 
-
             &>li {
 
                 list-style: none;
@@ -136,6 +246,10 @@ ul {
                     color: $main-color !important;
                     border-bottom: 1px solid $main-color;
                 }
+            }
+
+            @media (max-width: $mobile-max-width) {
+                display: none;
             }
         }
 
@@ -157,18 +271,33 @@ ul {
 
     .content {
 
+        @media (max-width: $mobile-max-width) {
+            width: 531px;
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+
         .consult-info {
             @include flex-container();
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
-            height: 60vh;
+            height: 484px;
             margin-right: 31px;
+            z-index: 1;
+
+            @media (max-width: $mobile-max-width) {
+                justify-content: center;
+            }
 
             &__title {
                 @include font-settings ('RoadRadio', 900, 60px, 61px);
                 color: $second-color;
                 width: 392px;
+
+                @media (max-width: $mobile-max-width) {
+                    @include font-settings ('RoadRadio', 900, 40px, 40px);
+                }
             }
 
             &__subtitle {
@@ -179,17 +308,37 @@ ul {
                 &>span {
                     color: $main-color;
                 }
+
+                @media (max-width: $mobile-max-width) {
+                    @include font-settings ('Gilroy', 600, 18px, 21px);
+                    width: 281px;
+                    margin-top: 22px;
+                }
             }
 
             &__btn {
                 @include main-btn();
                 margin-top: 41px;
+
+                @media (max-width: $mobile-max-width) {
+                    @include font-settings ('RoadRadio', 700, 14px, 14px);
+                    padding: 14px 24px;
+                    margin-top: 27px;
+                }
             }
 
             .social-net-links {
                 @include flex-container();
                 @include font-settings('RoadRadio', 400, 20px, 20.18px);
                 margin-top: 123px;
+
+                @media (max-width: $mobile-max-width) {
+                    flex-wrap: wrap;
+                    width: 219px;
+                    justify-content: flex-start;
+                    margin-top: 19px;
+                    row-gap: 7px;
+                }
 
                 &>li {
                     list-style: none;
@@ -198,6 +347,14 @@ ul {
                     button {
                         @include second-btn();
                         border-color: $main-color;
+                    }
+                }
+
+
+
+                &__instagram {
+                    @media (max-width: $mobile-max-width) {
+                        order: 1;
                     }
                 }
 
@@ -211,12 +368,22 @@ ul {
 
                 .vk-btn {
                     padding: 11px 29px 10px;
+
+
                 }
             }
         }
 
         .tattoo-master-img {
             margin-right: 108px;
+
+            @media (max-width: $mobile-max-width) {
+                position: absolute;
+                width: 357px;
+                height: 477px;
+                transform: translateX(241px);
+                overflow: hidden;
+            }
         }
 
         .scroll-further {
@@ -226,6 +393,10 @@ ul {
             position: absolute;
             width: 172px;
             right: 2%;
+
+            @media (max-width: $mobile-max-width) {
+                display: none;
+            }
 
             &::before {
                 content: '';
@@ -252,9 +423,13 @@ ul {
         position: absolute;
         height: 601px;
         width: 57px;
-        background: url('../../../assets/images/tattoo-tap.png'), no-repeat;
+        background: url('../../../assets/images/main/tattoo-tap.png'), no-repeat;
         left: 0px;
         top: 0px;
+
+        @media (max-width: $mobile-max-width) {
+            display: none;
+        }
     }
 }
 
@@ -262,19 +437,40 @@ ul {
     @extend %wrap-block;
     height: 656px;
 
+    @media (max-width: $mobile-max-width) {
+        height: 956px;
+    }
+
     .content {
         @include flex-container();
+        flex-wrap: wrap;
+        color: $second-color;
+        align-items: flex-start;
+        justify-content: flex-end;
+        height: 80%;
+
+        @media (max-width: $mobile-max-width) {
+            height: 861px;
+        }
 
         .owl-img {
             margin-right: 73px;
+            margin-top: 25px;
 
             &::before {
                 content: '';
                 position: absolute;
                 height: 110px;
                 width: 210px;
-                background: url('../../../assets/images/first-plaster.png'), no-repeat;
+                background: url('../../../assets/images/main/first-plaster.png'), no-repeat;
                 transform: translate(-76px, -56px);
+
+                @media (max-width: $mobile-max-width) {
+                    background-size: 142px 74px;
+                    width: 142px;
+                    height: 74px;
+                    transform: translate(-23px, -41px);
+                }
             }
 
             &::after {
@@ -282,74 +478,234 @@ ul {
                 position: absolute;
                 height: 187px;
                 width: 173px;
-                background: url('../../../assets/images/second-plaster.png'), no-repeat;
+                background: url('../../../assets/images/main/second-plaster.png'), no-repeat;
                 transform: translate(-109px, 283px);
+
+                @media (max-width: $mobile-max-width) {
+                    background-size: 79px 85px;
+                    width: 79px;
+                    height: 85px;
+                    transform: translate(-55px, 259px);
+                }
+            }
+
+            @media (max-width: $mobile-max-width) {
+                align-self: flex-start;
+                margin-right: 38px;
+                margin-top: 0;
+            }
+
+            img {
+                @media (max-width: $mobile-max-width) {
+                    width: 250px;
+                    height: 311px;
+                }
             }
         }
 
-        .about-master {
+        .master-info {
             @include flex-container();
+            align-items: flex-start;
             flex-direction: column;
             justify-content: space-between;
-            align-items: flex-start;
-            color: $second-color;
-            width: 694px;
-            height: 579px;
+            z-index: 1;
+
+            width: 326px;
+            height: 276px;
+            z-index: 1;
+
+            @media (max-width: $mobile-max-width) {
+                flex-direction: column;
+                align-items: flex-end;
+                width: 252px;
+            }
 
             &__name {
                 @include font-settings('RoadRadio', 700, 30px, 30.27px);
                 border-left: 6px solid $main-color;
                 padding-left: 9px;
+                width: 511px;
+                margin-bottom: 29px;
+
+                @media (max-width: $mobile-max-width) {
+                    @include font-settings('RoadRadio', 700, 20px, 20px);
+                    width: 237px;
+                }
             }
 
-            .master-info {
-                @include flex-container();
+            .master-achives {
+                width: 326px;
+                margin-right: 31px;
                 @include font-settings('Gilroy', 400, 16px, 18.56px);
-                align-items: flex-start;
 
-                .master-achives {
-                    width: 326px;
-
-                    &__name {}
+                &__name {
+                    margin-bottom: 10px;
                 }
 
-                &__education {
-                    width: 326px;
+                &__list {
+                    list-style: none;
+
+                    &>li {
+                        margin-left: 14px;
+                        margin-bottom: 10px;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            background-color: $main-color;
+                            transform: translate(-15px, 4px);
+                        }
+                    }
+                }
+
+                @media (max-width: $mobile-max-width) {
+                    @include font-settings('Gilroy', 400, 14px, 16px);
+                    width: 100%;
+                    margin-right: 0;
                 }
             }
 
-            .master-services {
-                @include flex-container();
-                text-align: center;
-                align-items: flex-start;
-                @include font-settings('Gilroy', 500, 14px, 16.48px);
 
-                &-block {
-                    margin-right: 9px;
+        }
 
-                    &__logo {
+        .master-education {
+            width: 326px;
+            @include font-settings('Gilroy', 400, 16px, 18.56px);
+            margin-top: 62px;
+            margin-left: 29px;
+            z-index: 1;
+
+            @media (max-width: $mobile-max-width) {
+                @include font-settings('Gilroy', 400, 14px, 16px);
+                width: 540px;
+                margin-top: 25px;
+                margin-left: 0;
+            }
+        }
+
+        .master-services {
+            @include flex-container();
+            text-align: center;
+            align-items: flex-start;
+            @include font-settings('Gilroy', 500, 14px, 16.48px);
+            width: 694px;
+            transform: translateY(-130px);
+            z-index: 1;
+
+            @media (max-width: $mobile-max-width) {
+                transform: translateY(0);
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                text-align: left;
+                column-gap: 30px;
+                row-gap: 16px;
+                margin-top: 37px;
+            }
+
+            &-block {
+                margin-right: 9px;
+
+                @media (max-width: $mobile-max-width) {
+                    width: 255px;
+                    margin-right: 0;
+                }
+
+                &__logo {
+                    margin: 0 auto;
+                    margin-bottom: 12px;
+
+                    @media (max-width: $mobile-max-width) {
+                        margin: 0;
+                    }
+                }
+
+                &:nth-child(1) {
+
+                    .master-services-block__logo {
                         width: 60px;
                         height: 59px;
                         background: url('../../../assets/icons/skull-pen.svg'), no-repeat;
-                        margin: 0 auto;
                     }
                 }
+
+                &:nth-child(2) {
+
+                    .master-services-block__logo {
+                        width: 35px;
+                        height: 60px;
+                        background: url('../../../assets/icons/mini-heart.svg'), no-repeat;
+                    }
+                }
+
+                &:nth-child(3) {
+
+                    .master-services-block__logo {
+                        width: 65px;
+                        height: 60px;
+                        background: url('../../../assets/icons/hand.svg'), no-repeat;
+                    }
+                }
+
+                &__info {
+                    width: 101%;
+                }
+            }
+        }
+
+        .about-master-btn {
+            @include main-btn();
+            transform: translate(0, -130px);
+            margin-top: 44px;
+            margin-right: 96px;
+
+            @media (max-width: $mobile-max-width) {
+                transform: translate(0, 0);
+                width: 100%;
+                margin-top: 38px;
+                margin-right: 0;
             }
 
-            &__btn {
-                @include main-btn();
+            &:active() {
+                box-shadow: none;
+                transform: translate(3px, -127px);
+
+                @media (max-width: $mobile-max-width) {
+                    transform: translate(3px, 3px);
+                }
             }
+        }
+    }
+
+    .about-us-text {
+        position: absolute;
+        @include font-settings('RoadRadio', 700, 178.02px, 179.62px);
+        transform: rotate(90deg) translate(170px, -166px);
+        ;
+        right: 0;
+        color: rgba($color: $bg-color, $alpha: 1.0);
+        text-shadow: rgba($color: $second-color, $alpha: 0.2) 0 0 2px;
+
+        @media (max-width: $mobile-max-width) {
+            display: none;
         }
     }
 }
 
 
+
 .services-wrap {
     @extend %wrap-block;
     height: 488px;
-    background: url('../../../assets/images/services-bg.png'), no-repeat;
+    background: url('../../../assets/images/main/services-bg.png'), no-repeat;
     background-size: cover;
     background-attachment: fixed;
+
+    @media (max-width: $mobile-max-width) {
+        height: 744px;
+    }
 
     .content {
         @include flex-container();
@@ -378,6 +734,10 @@ ul {
             @include flex-container();
             flex-direction: row;
 
+            @media (max-width: $mobile-max-width) {
+                flex-wrap: wrap;
+            }
+
             .services-block {
                 @include flex-container();
                 flex-direction: column;
@@ -389,6 +749,11 @@ ul {
                 margin-right: 36px;
                 padding: 0px 37px 0 27px;
                 align-items: flex-start;
+
+                @media (max-width: $mobile-max-width) {
+                    height: 241px;
+                    margin-bottom: 28px;
+                }
 
                 &__title {
                     @include font-settings('RoadRadio', 700, 25px, 25.22px);
@@ -452,11 +817,34 @@ ul {
     @extend %wrap-block;
     height: 1599px;
 
+    @media (max-width: $mobile-max-width) {
+        height: 1245px;
+    }
+
     .content {
         @include flex-container();
         flex-direction: column;
         color: $second-color;
-        width: 1157px;
+        //width: 1157px;
+
+
+
+        &::after {
+            content: '';
+            width: 740px;
+            height: 817px;
+            position: absolute;
+            right: 0;
+            background-color: $main-color;
+            z-index: -1;
+            transform: translateY(-48%);
+
+            @media (max-width: $mobile-max-width) {
+                width: 236px;
+                height: 390px;
+                transform: translateY(-110%);
+            }
+        }
 
         .portfolio-imgs {
             @include flex-container();
@@ -464,48 +852,91 @@ ul {
             flex-wrap: wrap;
             width: 1155px;
 
+            @media (max-width: $mobile-max-width) {
+                width: 540px;
+                justify-content: flex-start;
+                column-gap: 27px;
+                row-gap: 26px;
+
+            }
+
             .portfolio-info {
                 width: 339px;
                 margin-right: 29px;
                 align-self: flex-start;
+
+
 
                 &__title {
                     @include font-settings('RoadRadio', 700, 30px, 30.27px);
                     border-left: 6px solid $main-color;
                     padding-left: 9px;
                 }
-    
+
                 &__desc {
                     @include font-settings('Gilroy', 400, 18px, 20.88px);
                     margin-left: 15px;
+
+                    @media (max-width: $mobile-max-width) {
+                        width: 330px;
+                    }
+                }
+
+                @media (max-width: $mobile-max-width) {
+                    width: 540px;
                 }
             }
 
             .img-block {
                 img {
                     object-fit: cover;
+                    display: block;
+
+                    @media (max-width: $mobile-max-width) {
+                        width: 160px;
+                        height: 201px;
+                    }
                 }
 
+                &:nth-child(n) {
+                    @media (max-width: $mobile-max-width) {
+                        margin: 0;
+                    }
+                }
+
+                @media (max-width: $mobile-max-width) {
+                    margin-right: 32px;
+                    height: 201px;
+                }
+
+                &:nth-child(3n+1) {
+                    @media (max-width: $mobile-max-width) {
+                        margin-right: 0;
+                    }
+                }
+
+
+
                 &:nth-child(4) {
-                    transform: translateY(-49%);
+                    transform: translateY(-50%);
+
+                    @media (max-width: $mobile-max-width) {
+                        transform: translate(0);
+                    }
                 }
 
                 &:nth-child(5) {
                     position: absolute;
-                    //left: calc(50% - 100px);
                     transform: translateY(-54%);
-                }
 
-                &:nth-child(n+7):nth-child(-n+8) {
-                    margin-right: 3px;
-                }
-
-                &:nth-child(n+10):nth-child(-n+11) {
-                    margin-right: 3px;
+                    @media (max-width: $mobile-max-width) {
+                        position: relative;
+                        transform: translate(0);
+                    }
                 }
             }
 
-            
+
         }
 
         .portfolio-btns {
@@ -527,7 +958,7 @@ ul {
 .why-choose-us-wrap {
     @extend %wrap-block;
     height: 551px;
-    background: url('../../../assets/images/services-bg.png'), no-repeat;
+    background: url('../../../assets/images/main/services-bg.png'), no-repeat;
     background-size: cover;
     background-attachment: fixed;
 
@@ -548,12 +979,20 @@ ul {
                     @include font-settings('RoadRadio', 700, 30px, 30.27px);
                     border-left: 6px solid $main-color;
                     padding-left: 9px;
+
+                    @media (max-width: $mobile-max-width) {
+                        @include font-settings('RoadRadio', 700, 25px, 25px);
+                    }
                 }
 
                 &__subtitle {
                     @include font-settings('Gilroy', 400, 18px, 20.88px);
                     margin-left: 15px;
                     width: 307px;
+
+                    @media (max-width: $mobile-max-width) {
+                        @include font-settings('Gilroy', 400, 16px, 19px);
+                    }
                 }
 
                 margin-bottom: 75px;
@@ -565,6 +1004,10 @@ ul {
                 grid-template-rows: repeat(2, 1fr);
                 grid-template-columns: repeat(2, 1fr);
                 column-gap: 44px;
+
+                @media (max-width: $mobile-max-width) {
+                    column-gap: 25px;
+                }
 
                 .choose-us-block {
                     text-align: left;
@@ -579,6 +1022,10 @@ ul {
                             content: '';
                             position: absolute;
                             transform: translate(-70px, -20px);
+                        }
+
+                        @media (max-width: $mobile-max-width) {
+                            @include font-settings('RoadRadio', 700, 18px, 18px);
                         }
                     }
 
@@ -609,10 +1056,18 @@ ul {
                     &:nth-child(3) {
                         width: 289px;
 
+                        .choose-us-block__title {
+                            margin-bottom: 10px;
+                        }
+
                         .choose-us-block__title::before {
                             width: 62px;
                             height: 49.5px;
                             background: url('../../../assets/icons/tattoo-pen.svg'), no-repeat;
+                        }
+
+                        @media (max-width: $mobile-max-width) {
+                            width: 253px;
                         }
                     }
 
@@ -631,6 +1086,10 @@ ul {
 
         .tattoo-guy {
             align-self: flex-end;
+
+            @media (max-width: $mobile-max-width) {
+                display: none;
+            }
         }
     }
 }
@@ -652,12 +1111,21 @@ ul {
                 @include font-settings('RoadRadio', 700, 30px, 30.27px);
                 border-left: 6px solid $main-color;
                 padding-left: 9px;
+
+                @media (max-width: $mobile-max-width) {
+                    @include font-settings('RoadRadio', 700, 25px, 25px);
+                }
             }
 
             &__subtitle {
                 @include font-settings('Gilroy', 400, 18px, 20.88px);
                 margin-left: 15px;
                 width: 374px;
+
+                @media (max-width: $mobile-max-width) {
+                    @include font-settings('Gilroy', 400, 16px, 17px);
+                    width: 239px;
+                }
             }
 
             margin-bottom: 57px;
@@ -665,6 +1133,8 @@ ul {
 
         .masters-cards {
             @include flex-container();
+            position: relative;
+            width: 100%;
 
             .master-card {
                 text-align: center;
@@ -672,13 +1142,14 @@ ul {
                 width: 363px;
                 height: 418px;
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-between;
                 align-items: center;
                 flex-direction: column;
                 margin-right: 37px;
 
                 &__img {
                     border: 3px solid $main-color;
+                    width: 99%;
                 }
 
                 &__name {
@@ -698,6 +1169,27 @@ ul {
                     border-color: $main-color;
                     margin-bottom: 34px;
                 }
+
+
+            }
+
+            .slick-prev {
+                right: 400px;
+                transform: rotate(180deg);
+                top: -84px;
+
+                @media (max-width: $mobile-max-width) {
+                    right: 110px;
+                }
+            }
+
+            .slick-next {
+                right: 326px;
+                top: -84px;
+
+                @media (max-width: $mobile-max-width) {
+                    right: 36px;
+                }
             }
         }
     }
@@ -706,7 +1198,7 @@ ul {
 .skills-wrap {
     @extend %wrap-block;
     height: 393px;
-    background: url('../../../assets/images/services-bg.png'), no-repeat;
+    background: url('../../../assets/images/main/services-bg.png'), no-repeat;
     background-size: cover;
     background-attachment: fixed;
 
@@ -714,51 +1206,117 @@ ul {
         @include flex-container();
         flex-direction: row;
         align-items: flex-start;
+        justify-content: flex-end;
         color: $second-color;
         height: 100%;
+        flex-wrap: wrap;
+
+        @media (max-width: $mobile-max-width) {
+            justify-content: flex-start;
+
+            .skill-info {
+                order: -1;
+            }
+        }
 
         .tattoo-tool {
             align-self: flex-end;
-            margin-right: 84px;
+            margin-top: 54px;
+            transform: translateX(-84px);
+
+            @media (max-width: $mobile-max-width) {
+                margin-top: 0;
+                transform: translateX(0);
+                width: 249.68px;
+                height: 184px;
+                margin-right: 30px;
+            }
         }
 
         .skill-info {
             align-self: flex-end;
             height: 339px;
 
+            @media (max-width: $mobile-max-width) {
+                height: 147px;
+                //width: 540px;
+            }
+
             &__title {
                 @include font-settings('RoadRadio', 700, 20px, 20.18px);
                 color: $main-color;
                 margin-bottom: 20px;
+
+                @media (max-width: $mobile-max-width) {
+                    @include font-settings('RoadRadio', 700, 18px, 18px);
+                }
             }
 
             &__subtitle {
                 @include font-settings('RoadRadio', 700, 30px, 30.27px);
                 margin-bottom: 13px;
+
+                @media (max-width: $mobile-max-width) {
+                    @include font-settings('RoadRadio', 700, 25px, 25px);
+                }
             }
 
             &__desc {
                 @include font-settings('Gilroy', 400, 18px, 20.88px);
                 margin-bottom: 38px;
                 width: 653px;
+
+                @media (max-width: $mobile-max-width) {
+                    @include font-settings('Gilroy', 400, 14px, 16px);
+                    width: 540px;
+                }
+            }
+        }
+
+        .skill-stat {
+            @include flex-container();
+            flex-direction: row;
+            justify-content: flex-start;
+            transform: translate(-90px, -130px);
+
+            @media (max-width: $mobile-max-width) {
+                transform: translate(0, 0);
+                flex-wrap: wrap;
+                width: 255px;
+                margin-top: 27px;
+                row-gap: 29px;
             }
 
-            .skill-stat {
-                @include flex-container();
-                flex-direction: row;
-                justify-content: flex-start;
+            .stat-block {
+                margin-right: 75px;
 
-                .stat-block {
-                    margin-right: 75px;
+                @media (max-width: $mobile-max-width) {
+                    margin-right: 0;
+                }
 
-                    &__num {
-                        @include font-settings('RoadRadio', 700, 50px, 50.45px);
-                        color: $main-color;
+                &:nth-child(1) {
+                    @media (max-width: $mobile-max-width) {
+                        order: 2;
                     }
+                }
 
-                    &__name {
-                        @include font-settings('Gilroy', 400, 20px, 23.2px);
+                &:nth-child(2) {
+                    @media (max-width: $mobile-max-width) {
+                        margin-right: 58px;
                     }
+                }
+
+                &__num {
+                    @include font-settings('RoadRadio', 700, 50px, 50.45px);
+                    color: $main-color;
+
+                    @media (max-width: $mobile-max-width) {
+                        @include font-settings('RoadRadio', 700, 30px, 30px);
+                    }
+                }
+
+                &__name {
+                    @include font-settings('Gilroy', 400, 20px, 23.2px);
                 }
             }
         }
@@ -787,6 +1345,10 @@ ul {
             right: 0;
             background-color: $main-color;
             z-index: -1;
+
+            @media (max-width: $mobile-max-width) {
+                width: 88px;
+            }
         }
 
         .stock-title {
@@ -794,12 +1356,16 @@ ul {
             border-left: 6px solid $main-color;
             padding-left: 9px;
             margin-bottom: 54px;
+
+            @media (max-width: $mobile-max-width) {
+                @include font-settings('RoadRadio', 700, 25px, 25px);
+            }
         }
 
         .stock-slider {
-           min-width: 0;
-           position: relative;
-           width: 100%;
+            min-width: 0;
+            position: relative;
+            width: 100%;
 
             .stock-block {
                 text-align: left;
@@ -807,14 +1373,14 @@ ul {
                 width: 357.55px;
                 height: 405px;
                 display: flex;
-                justify-content: flex-start;
+                justify-content: space-between;
                 align-items: flex-start;
                 flex-direction: column;
                 margin-right: 37px;
 
                 &__img {
                     border: 3px solid $main-color;
-                    width: 338.55px;
+                    width: 99%;
                 }
 
                 &__title {
@@ -834,37 +1400,23 @@ ul {
                 }
             }
 
-            .slick-track {
-                display: flex;
-                position: relative;
-            }
-
-            .slick-list {
-                overflow: hidden;
-            }
-
-            .slick-arrow {
-                position: absolute;
-                top: 50%;
-                z-index: 10;
-                width: 40px;
-                height: 40px;
-                background: url('../../../assets/icons/faq-arrow.svg') no-repeat;
-                background-color: $main-color;
-                background-position: center;
-                font-size: 0;
-            }
-
             .slick-prev {
                 right: 400px;
                 transform: rotate(180deg);
                 top: -84px;
+
+                @media (max-width: $mobile-max-width) {
+                    right: 150px;
+                }
             }
 
             .slick-next {
                 right: 326px;
                 top: -84px;
-                
+
+                @media (max-width: $mobile-max-width) {
+                    right: 76px;
+                }
             }
         }
     }
@@ -874,7 +1426,7 @@ ul {
 .certificates-wrap {
     @extend %wrap-block;
     height: 624px;
-    background: url('../../../assets/images/sertificates-bg.png'), no-repeat;
+    background: url('../../../assets/images/main/sertificates-bg.png'), no-repeat;
     background-size: cover;
     background-attachment: fixed;
 
@@ -890,15 +1442,51 @@ ul {
             align-self: flex-start;
             padding-left: 9px;
             margin-bottom: 54px;
+
+            @media (max-width: $mobile-max-width) {
+                @include font-settings('RoadRadio', 700, 25px, 25px);
+            }
         }
 
         .certificates-list {
+            @include flex-container();
+
+            @media (max-width: $mobile-max-width) {
+                width: 100%;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+            }
+
             .certificate-item {
-                &__tool-img {
+                &:nth-child(1) {
+                    .certificate-item__tool-img {
+                        @media (max-width: $mobile-max-width) {
+                            width: 168px;
+                            height: 238px;
+                        }
+                    }
+                }
+
+                &:nth-child(2) {
                     position: absolute;
-                    width: 269px;
-                    height: 197px;
-                    transform: translate(-103px, 142px);
+
+                    .certificate-item__tool-img {
+                        width: 269px;
+                        height: 197px;
+
+                        @media (max-width: $mobile-max-width) {
+                            width: 137px;
+                            height: 100px;
+                        }
+                    }
+
+                    transform: translate(173px, 17px);
+
+                    @media (max-width: $mobile-max-width) {
+                        position: relative;
+                        transform: translate(0);
+
+                    }
                 }
             }
         }
@@ -923,11 +1511,17 @@ ul {
             border-left: 6px solid $main-color;
             padding-left: 9px;
             margin-bottom: 54px;
+
+            @media (max-width: $mobile-max-width) {
+                @include font-settings('RoadRadio', 700, 25px, 25px);
+            }
         }
 
         .reviews-slider {
             @include flex-container();
             flex-direction: row;
+            position: relative;
+            width: 100%;
 
             .reviews-block {
                 text-align: left;
@@ -935,29 +1529,55 @@ ul {
                 width: 359px;
                 height: 369px;
                 display: flex;
-                justify-content: flex-start;
+                justify-content: space-evenly;
                 align-items: flex-start;
                 flex-direction: column;
                 margin-right: 33px;
 
-                &__img {
-                    border: 3px solid $main-color;
-                }
 
-                &__title {
+                &__name {
                     @include font-settings('RoadRadio', 700, 18px, 18.16px);
                     color: $main-color;
-                    margin: 29px 22px;
+                    margin-left: 14px;
                 }
 
-                &__btn {
-                    @include details-btn();
-                    @include font-settings('RoadRadio', 700, 16px, 16.14px);
-                    color: $second-color;
-                    border-color: $second-color;
-                    margin-bottom: 27px;
-                    margin-left: 22px;
-                    margin-right: 22px;
+                &__comment {
+                    @include font-settings('Gilroy', 300, 14px, 16px);
+                    margin-left: 14px;
+                    margin-right: 27px;
+                    // margin-bottom: 25px;
+                }
+
+                .reviews-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    margin-left: 14px;
+                    column-gap: 24px;
+                    row-gap: 8px;
+
+                    &__img {
+                        border: 1px solid $main-color;
+                    }
+                }
+            }
+
+            .slick-prev {
+                right: 400px;
+                transform: rotate(180deg);
+                top: -84px;
+
+                @media (max-width: $mobile-max-width) {
+                    right: 110px;
+                }
+            }
+
+            .slick-next {
+                right: 326px;
+                top: -84px;
+
+                @media (max-width: $mobile-max-width) {
+                    right: 36px;
                 }
             }
         }
@@ -969,6 +1589,10 @@ ul {
     @extend %wrap-block;
     height: 385px;
 
+    @media (max-width: $mobile-max-width) {
+        height: 469px;
+    }
+
     .content {
         @include flex-container();
         flex-direction: column;
@@ -976,17 +1600,26 @@ ul {
         color: $second-color;
         height: 100%;
 
-
         .add-services-title {
             @include font-settings('RoadRadio', 700, 30px, 30.27px);
             border-left: 6px solid $main-color;
             padding-left: 9px;
             margin-bottom: 59px;
+
+            @media (max-width: $mobile-max-width) {
+                @include font-settings('RoadRadio', 700, 25px, 25px);
+            }
         }
 
         .add-services-list {
             @include flex-container();
             flex-direction: row;
+
+            @media (max-width: $mobile-max-width) {
+                flex-wrap: wrap;
+                justify-content: left;
+                row-gap: 12px;
+            }
 
             .add-services-block {
                 text-align: center;
@@ -1000,16 +1633,39 @@ ul {
                 margin-right: 33px;
                 padding: 17px 21px;
 
+                @media (max-width: $mobile-max-width) {
+                    text-align: left;
+                    width: 255px;
+                    padding: 0;
+                    margin-right: 30px;
+                }
+
+                &:nth-child(2) {
+
+                    @media (max-width: $mobile-max-width) {
+                        margin: 0;
+                    }
+                }
+
                 &__title {
                     @include font-settings('RoadRadio', 700, 25px, 25.22px);
                     color: $main-color;
                     width: 255px;
                     margin: auto;
+
+                    @media (max-width: $mobile-max-width) {
+                        @include font-settings('RoadRadio', 700, 20px, 20px);
+                        margin-left: 11px;
+                    }
                 }
 
                 &__desc {
                     @include font-settings('Gilroy', 300, 14px, 16.14px);
                     color: $second-color;
+
+                    @media (max-width: $mobile-max-width) {
+                        margin-left: 11px;
+                    }
                 }
             }
         }
@@ -1039,26 +1695,63 @@ ul {
         .usefull-articles-slider {
             @include flex-container();
             flex-direction: row;
+            width: 100%;
+            position: relative;
 
             .usefull-articles-block {
                 text-align: left;
                 background-color: $card-color;
-                width: 363.55px;
-                height: 405px;
+                width: 358px;
+                height: 395px;
                 display: flex;
                 justify-content: flex-start;
                 align-items: flex-start;
                 flex-direction: column;
-                margin-right: 37px;
+                //margin-right: 34px;
 
                 &__img {
                     border: 3px solid $main-color;
+                    width: 99%;
+                    height: 235px;
                 }
 
                 &__title {
                     @include font-settings('RoadRadio', 700, 18px, 18.16px);
                     color: $main-color;
-                    margin: 29px 22px;
+                    margin: 28px 22px 15px;
+                }
+
+                .data-and-views {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 170px;
+                    @include font-settings('Gilroy', 300, 12px, 14px);
+                    margin-left: 44px;
+                    margin-bottom: 28px;
+
+                    &__data {
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 20px;
+                            height: 20px;
+                            background: url('../../../assets/icons/data.svg'), no-repeat;
+                            transform: translate(-23px, -4px);
+                        }
+                    }
+
+                    &__views {
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 22px;
+                            height: 18px;
+                            background: url('../../../assets/icons/views.svg'), no-repeat;
+                            transform: translate(-23px, -4px);
+                        }
+                    }
                 }
 
                 &__btn {
@@ -1069,6 +1762,25 @@ ul {
                     margin-bottom: 27px;
                     margin-left: 22px;
                     margin-right: 22px;
+                }
+            }
+
+            .slick-prev {
+                right: 400px;
+                transform: rotate(180deg);
+                top: -84px;
+
+                @media (max-width: $mobile-max-width) {
+                    right: 110px;
+                }
+            }
+
+            .slick-next {
+                right: 326px;
+                top: -84px;
+
+                @media (max-width: $mobile-max-width) {
+                    right: 36px;
                 }
             }
         }
@@ -1102,32 +1814,64 @@ ul {
                 @include flex-container();
                 flex-wrap: wrap;
                 list-style: none;
+                align-items: flex-start;
+                margin-bottom: 63px;
+                justify-content: flex-start;
 
                 .faq-item {
                     width: 563px;
                     background-color: $card-color;
                     margin-bottom: 8px;
-                    
+                    align-self: center;
+
                     &__question {
                         @include font-settings('Gilroy', 600, 20px, 23.86px);
+                        width: 390px;
+                        margin: 18px 36px;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 12px;
+                            height: 20px;
+                            background: url('../../../assets/icons/faq-arrow.svg'), no-repeat;
+                            transform: translate(490px, 0px);
+                            transition: all .3s;
+                        }
                     }
 
                     &__answer {
                         @include font-settings('Gilroy', 300, 14px, 16.14px);
+                        display: none;
+                        width: 452px;
+                        margin: 22px 36px;
                     }
 
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        width: 12px;
-                        height: 20px;
-                        background: url('../../../assets/icons/faq-arrow.svg'), no-repeat;
-                        transform: translate(518px, -81px);
-                    }
+
+
 
                     &:nth-child(2n+1) {
                         margin-right: 15px;
+
+                        @media (max-width: $mobile-max-width) {
+                            margin-right: 0;
+                        }
                     }
+
+                    @media (max-width: $mobile-max-width) {
+                        margin-bottom: 15px;
+                    }
+                }
+
+                .opened {
+                    .faq-item__question {
+                        color: $main-color;
+
+                        &::before {
+                            transform: translate(490px, 0px) rotate(90deg);
+                        }
+                    }
+
                 }
             }
         }
@@ -1139,6 +1883,10 @@ ul {
     @extend %wrap-block;
     height: 600px;
 
+    @media (max-width: $mobile-max-width) {
+        height: 996px;
+    }
+
     .content {
         @include flex-container();
         flex-direction: row;
@@ -1147,8 +1895,19 @@ ul {
         color: $second-color;
         height: 100%;
 
+        @media (max-width: $mobile-max-width) {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
         .contacts {
             @include font-settings('Gilroy', 400, 20px, 23.2px);
+
+            @media (max-width: $mobile-max-width) {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
 
             &__title {
                 @include font-settings('RoadRadio', 700, 30px, 30.27px);
@@ -1156,6 +1915,12 @@ ul {
                 padding-left: 9px;
                 margin-bottom: 41px;
                 margin-top: 28px;
+
+                @media (max-width: $mobile-max-width) {
+                    @include font-settings('RoadRadio', 700, 25px, 25px);
+                    width: 520px;
+                    margin-bottom: 28px;
+                }
             }
 
             &__address {
@@ -1168,6 +1933,10 @@ ul {
 
             &__mail {
                 margin-bottom: 59px;
+
+                @media (max-width: $mobile-max-width) {
+                    margin-bottom: 0;
+                }
             }
 
             .contacts-social-links {
@@ -1177,6 +1946,16 @@ ul {
                 &>li {
                     list-style: none;
                     margin-right: 51px;
+
+                    &:nth-child(3) {
+                        @media (max-width: $mobile-max-width) {
+                            margin-right: 0;
+                        }
+                    }
+                }
+
+                @media (max-width: $mobile-max-width) {
+                    @include font-settings('RoadRadio', 400, 14px, 14px);
                 }
             }
         }
@@ -1184,6 +1963,13 @@ ul {
         .map-salon {
             position: absolute;
             right: 5px;
+
+            @media (max-width: $mobile-max-width) {
+                position: relative;
+                display: block;
+                width: 557px;
+                margin-top: 44px;
+            }
         }
     }
 }
