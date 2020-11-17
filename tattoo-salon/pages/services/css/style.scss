@@ -5,9 +5,11 @@ $bg-color: #18181b;
 $card-color: #101010;
 
 $width-content: 1141px;
-$width-mobile-content: 552px;
+$width-desktop-content: 552px;
+$width-mobile-content: 320px;
 
-$mobile-max-width: 1232px;
+$desktop-max-width: 1232px;
+$mobile-max-width: 578px;
 
 @mixin font-settings ($family, $weight, $size, $height) {
     font-family: $family;
@@ -25,10 +27,16 @@ $mobile-max-width: 1232px;
     background-color: $main-color;
     box-shadow: 3px 3px 0px #2A9659;
     padding: 17px 30px 18px;
+    cursor: pointer;
+    transition: background-color .2s;
 
     &:active() {
         box-shadow: none;
         transform: translate(3px, 3px);
+    }
+
+    &:hover {
+        background-color: rgba($color: $main-color, $alpha: 0.9);
     }
 }
 
@@ -40,6 +48,12 @@ $mobile-max-width: 1232px;
     background-color: transparent;
     border: 1px solid $second-color;
     padding: 12px 16px 13px;
+    cursor: pointer;
+    transition: background-color .2s;
+
+    &:hover {
+        background-color: $main-color;
+    }
 }
 
 @mixin details-btn {
@@ -47,6 +61,12 @@ $mobile-max-width: 1232px;
     color: $second-color;
     @include font-settings('Gilroy', 300, 14px, 16.14px);
     border-bottom: 1px solid $second-color;
+    cursor: pointer;
+    transition: color .2s;
+
+    &:hover {
+        color: rgba($color: $second-color, $alpha: 0.8);
+    }
 }
 
 @mixin flex-container () {
@@ -111,9 +131,14 @@ img {
     font-size: 0;
 }
 
-.content {
+.content,
+.header {
     @include flex-container();
     width: $width-content;
+
+    @media (max-width: $desktop-max-width) {
+        width: $width-desktop-content;
+    }
 
     @media (max-width: $mobile-max-width) {
         width: $width-mobile-content;
@@ -122,6 +147,7 @@ img {
 
 .header {
     @extend %wrap-block;
+    margin: 0 auto;
     margin-top: 10px;  
 
     .content {
@@ -129,8 +155,12 @@ img {
         justify-content: space-between;
         align-self: center;
 
-        @media (max-width: $mobile-max-width) {
+        @media (max-width: $desktop-max-width) {
             width: 531px;
+        }
+
+        @media (max-width: $mobile-max-width) {
+            width: 100%;
         }
 
         .header-logo {
@@ -163,10 +193,15 @@ img {
                 a {
                     text-decoration: none;
                     color: $second-color;
-                }
+                    transition: color .2s;
+
+                    &:hover {
+                        color: $main-color;
+                    }
+                }   
             }
 
-            &__services {
+            .current-menu-item {
 
                 a {
                     color: $main-color !important;
@@ -174,7 +209,7 @@ img {
                 }
             }
 
-            @media (max-width: $mobile-max-width) {
+            @media (max-width: $desktop-max-width) {
                 display: none;
             }
         }
@@ -182,6 +217,10 @@ img {
 
     .back-call {
         @include second-btn();
+
+        @media (max-width: $mobile-max-width) {
+            display: none;
+        }
     }
 
     &__burger {
@@ -197,12 +236,13 @@ img {
 }
 
 
+
 .portfolio-wrap {
     @extend %wrap-block;
     //height: 1599px;
     padding: 54px 0 98px;
 
-    @media (max-width: $mobile-max-width) {
+    @media (max-width: $desktop-max-width) {
         padding: 33px 0 68px;
     }
 
@@ -226,13 +266,21 @@ img {
                 @include font-settings('Gilroy', 400, 18px, 20.88px);
                 margin-left: 15px;
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     width: 330px;
+                }
+
+                @media (max-width: $mobile-max-width) {
+                    width: 100%;
                 }
             }
 
-            @media (max-width: $mobile-max-width) {
+            @media (max-width: $desktop-max-width) {
                 width: 540px;
+            }
+
+            @media (max-width: $mobile-max-width) {
+                width: 100%;
             }
         }
 
@@ -245,11 +293,18 @@ img {
             width: 1155px;
             margin-top: 54px;
 
-            @media (max-width: $mobile-max-width) {
+            @media (max-width: $desktop-max-width) {
                 width: 100%;
                 justify-content: flex-start;
                 column-gap: 32px;
                 row-gap: 19px;
+            }
+
+            @media (max-width: $mobile-max-width) {
+                width: 100%;
+                row-gap: 0px;
+                column-gap: 0px;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             &::after {
@@ -262,7 +317,7 @@ img {
                 z-index: -1;
                 transform: translateY(-54px);
     
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     width: 236px;
                     height: 390px;
                     transform: translateY(-61%);
@@ -273,7 +328,7 @@ img {
 
             .img-block {
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     width: 160px;
                     height: 201px;
 
@@ -285,7 +340,7 @@ img {
                     width: 346px;
                     height: 400px;
 
-                    @media (max-width: $mobile-max-width) {
+                    @media (max-width: $desktop-max-width) {
                         width: 160px;
                         height: 201px;
                     }
@@ -298,9 +353,15 @@ img {
             padding: 18px 25px;
             margin-top: 59px;
 
-            @media (max-width: $mobile-max-width) {
+            @media (max-width: $desktop-max-width) {
                 @include font-settings('RoadRadio', 700, 14px, 14px);
                 padding: 16px 37px;
+            }
+
+            @media (max-width: $mobile-max-width) {
+                margin-right: 0;
+                width: 100%;
+                margin-bottom: 20px;
             }
         }
     }
@@ -309,12 +370,7 @@ img {
 
 .faq-wrap {
     @extend %wrap-block;
-    padding: 73px 0 83px;
     //height: 561px;
-
-    @media (max-width: $mobile-max-width) {
-        padding: 68px 0 47px;
-    }
 
     .content {
         @include flex-container();
@@ -334,24 +390,40 @@ img {
         .faq-block {
             color: $second-color;
 
+            @media (max-width: $mobile-max-width) {
+                width: 100%;
+            }
 
             .faq-list {
                 @include flex-container();
                 flex-wrap: wrap;
                 list-style: none;
                 align-items: flex-start;
+                margin-bottom: 63px;
                 justify-content: flex-start;
+
+                @media (max-width: $mobile-max-width) {
+                    width: 100%;
+                }
 
                 .faq-item {
                     width: 563px;
                     background-color: $card-color;
                     margin-bottom: 8px;
-                    align-self: center;
+
+                    @media (max-width: $mobile-max-width) {
+                        width: 100%;
+                    }
 
                     &__question {
                         @include font-settings('Gilroy', 600, 20px, 23.86px);
                         width: 390px;
                         margin: 18px 36px;
+
+                        @media (max-width: $mobile-max-width) {
+                            width: 80%;
+                            margin: 18px auto;
+                        }
 
                         &::before {
                             content: '';
@@ -361,6 +433,10 @@ img {
                             background: url('../../../assets/icons/faq-arrow.svg'), no-repeat;
                             transform: translate(490px, 0px);
                             transition: all .3s;
+
+                            @media (max-width: $mobile-max-width) {
+                                transform: translate(260px, 0px);
+                            }
                         }
                     }
 
@@ -369,6 +445,10 @@ img {
                         display: none;
                         width: 452px;
                         margin: 22px 36px;
+
+                        @media (max-width: $mobile-max-width) {
+                            width: 80%;
+                        }
                     }
 
 
@@ -377,12 +457,12 @@ img {
                     &:nth-child(2n+1) {
                         margin-right: 15px;
 
-                        @media (max-width: $mobile-max-width) {
+                        @media (max-width: $desktop-max-width) {
                             margin-right: 0;
                         }
                     }
 
-                    @media (max-width: $mobile-max-width) {
+                    @media (max-width: $desktop-max-width) {
                         margin-bottom: 15px;
                     }
                 }
@@ -393,7 +473,10 @@ img {
 
                         &::before {
                             transform: translate(490px, 0px) rotate(90deg);
-                            bac: $main-color;
+
+                            @media (max-width: $mobile-max-width) {
+                                transform: translate(260px, 0px) rotate(90deg);;
+                            }
                         }
                     }
 
@@ -430,7 +513,7 @@ img {
                     border-left: 6px solid $main-color;
                     padding-left: 9px;
 
-                    @media (max-width: $mobile-max-width) {
+                    @media (max-width: $desktop-max-width) {
                         @include font-settings('RoadRadio', 700, 25px, 25px);
                     }
                 }
@@ -440,7 +523,7 @@ img {
                     margin-left: 15px;
                     width: 307px;
 
-                    @media (max-width: $mobile-max-width) {
+                    @media (max-width: $desktop-max-width) {
                         @include font-settings('Gilroy', 400, 16px, 19px);
                     }
                 }
@@ -459,7 +542,7 @@ img {
                 margin-left: 21px;
                 list-style: none;
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     column-gap: 25px;
                 }
 
@@ -483,7 +566,7 @@ img {
         .tattoo-guy {
             align-self: flex-end;
 
-            @media (max-width: $mobile-max-width) {
+            @media (max-width: $desktop-max-width) {
                 display: none;
             }
         }
@@ -508,7 +591,7 @@ img {
                 border-left: 6px solid $main-color;
                 padding-left: 9px;
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     @include font-settings('RoadRadio', 700, 25px, 25px);
                 }
             }
@@ -519,7 +602,7 @@ img {
                 margin-top: 10px;
                 width: 374px;
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     @include font-settings('Gilroy', 400, 16px, 17px);
                     width: 239px;
                 }
@@ -598,7 +681,7 @@ img {
                 transform: rotate(180deg);
                 top: -84px;
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     right: 110px;
                 }
             }
@@ -607,7 +690,7 @@ img {
                 right: 326px;
                 top: -84px;
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     right: 36px;
                 }
             }
@@ -638,7 +721,7 @@ img {
             padding-left: 9px;
             margin-bottom: 54px;
 
-            @media (max-width: $mobile-max-width) {
+            @media (max-width: $desktop-max-width) {
                 @include font-settings('RoadRadio', 700, 25px, 25px);
             }
         }
@@ -646,11 +729,16 @@ img {
         .certificates-list {
             @include flex-container();
             width: 100%;
+            position: relative;
 
-            @media (max-width: $mobile-max-width) {
+            @media (max-width: $desktop-max-width) {
                 width: 100%;
                 flex-direction: row-reverse;
                 justify-content: space-between;
+            }
+
+            @media (max-width: $mobile-max-width) {
+                margin-top: 40px;
             }
 
             .certificate-item {
@@ -663,7 +751,7 @@ img {
                 transform: rotate(180deg);
                 top: -84px;
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     right: 110px;
                 }
             }
@@ -672,7 +760,7 @@ img {
                 right: 326px;
                 top: -84px;
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     right: 36px;
                 }
             }
@@ -699,7 +787,7 @@ img {
             padding-left: 9px;
             margin-bottom: 54px;
 
-            @media (max-width: $mobile-max-width) {
+            @media (max-width: $desktop-max-width) {
                 @include font-settings('RoadRadio', 700, 25px, 25px);
             }
         }
@@ -745,6 +833,10 @@ img {
 
                     &__img {
                         border: 1px solid $main-color;
+                      
+                        @media (max-width: $mobile-max-width) {
+                            width: 85%;
+                        }
                     }
                 }
             }
@@ -754,7 +846,7 @@ img {
                 transform: rotate(180deg);
                 top: -84px;
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     right: 110px;
                 }
             }
@@ -763,7 +855,7 @@ img {
                 right: 326px;
                 top: -84px;
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     right: 36px;
                 }
             }
@@ -779,7 +871,7 @@ img {
     @extend %wrap-block;
     height: 600px;
 
-    @media (max-width: $mobile-max-width) {
+    @media (max-width: $desktop-max-width) {
         height: 996px;
     }
 
@@ -791,7 +883,7 @@ img {
         color: $second-color;
         height: 100%;
 
-        @media (max-width: $mobile-max-width) {
+        @media (max-width: $desktop-max-width) {
             flex-direction: column;
             justify-content: flex-start;
         }
@@ -799,10 +891,14 @@ img {
         .contacts {
             @include font-settings('Gilroy', 400, 20px, 23.2px);
 
-            @media (max-width: $mobile-max-width) {
+            @media (max-width: $desktop-max-width) {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
+            }
+
+            @media (max-width: $mobile-max-width) {
+                width: 100%;
             }
 
             &__title {
@@ -812,7 +908,7 @@ img {
                 margin-bottom: 41px;
                 margin-top: 28px;
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     @include font-settings('RoadRadio', 700, 25px, 25px);
                     width: 520px;
                     margin-bottom: 28px;
@@ -825,13 +921,21 @@ img {
 
             &__phone {
                 margin-bottom: 26px;
+
+                @media (max-width: $mobile-max-width) {
+                    margin-right: 7px;
+                }
             }
 
             &__mail {
                 margin-bottom: 59px;
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     margin-bottom: 0;
+                }
+
+                @media (max-width: $mobile-max-width) {
+                    margin-bottom: 26px;
                 }
             }
 
@@ -843,14 +947,22 @@ img {
                     list-style: none;
                     margin-right: 51px;
 
+                    a {
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $main-color;
+                        }
+                    }
+
                     &:nth-child(3) {
-                        @media (max-width: $mobile-max-width) {
+                        @media (max-width: $desktop-max-width) {
                             margin-right: 0;
                         }
                     }
                 }
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     @include font-settings('RoadRadio', 400, 14px, 14px);
                 }
             }
@@ -860,11 +972,15 @@ img {
             position: absolute;
             right: 5px;
 
-            @media (max-width: $mobile-max-width) {
+            @media (max-width: $desktop-max-width) {
                 position: relative;
                 display: block;
                 width: 557px;
                 margin-top: 44px;
+            }
+
+            @media (max-width: $mobile-max-width) {
+                width: 100%;
             }
         }
     }
