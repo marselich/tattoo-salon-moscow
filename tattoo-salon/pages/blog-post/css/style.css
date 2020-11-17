@@ -70,7 +70,8 @@ img {
   font-size: 0;
 }
 
-.content {
+.content,
+.header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,12 +85,21 @@ img {
 }
 
 @media (max-width: 1232px) {
-  .content {
-    width: 540px;
+  .content,
+  .header {
+    width: 552px;
+  }
+}
+
+@media (max-width: 578px) {
+  .content,
+  .header {
+    width: 320px;
   }
 }
 
 .header {
+  margin: 0 auto;
   margin-top: 10px;
 }
 
@@ -113,6 +123,12 @@ img {
 @media (max-width: 1232px) {
   .header .content {
     width: 531px;
+  }
+}
+
+@media (max-width: 578px) {
+  .header .content {
+    width: 100%;
   }
 }
 
@@ -177,9 +193,15 @@ img {
 .header .content .header-nav > li a {
   text-decoration: none;
   color: #FFFFFF;
+  -webkit-transition: color .2s;
+  transition: color .2s;
 }
 
-.header .content .header-nav__blog a {
+.header .content .header-nav > li a:hover {
+  color: #34B86E;
+}
+
+.header .content .header-nav .current-menu-item a {
   color: #34B86E !important;
   border-bottom: 1px solid #34B86E;
 }
@@ -202,6 +224,19 @@ img {
   background-color: transparent;
   border: 1px solid #FFFFFF;
   padding: 12px 16px 13px;
+  cursor: pointer;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
+}
+
+.header .back-call:hover {
+  background-color: #34B86E;
+}
+
+@media (max-width: 578px) {
+  .header .back-call {
+    display: none;
+  }
 }
 
 .header__burger {
@@ -371,9 +406,31 @@ img {
   }
 }
 
+@media (max-width: 578px) {
+  .blog-post-wrap .content .blog-post-nav .blog-post-block .card-content__title {
+    width: 90%;
+  }
+}
+
 .blog-post-wrap .content .blog-post-nav .blog-post-block .card-content .data-and-views {
   margin-left: 35px;
   width: 131px;
+}
+
+@media (max-width: 578px) {
+  .blog-post-wrap .content .blog-post-nav .blog-post-block .card-content .data-and-views__views {
+    margin-left: 3px;
+  }
+}
+
+@media (max-width: 578px) {
+  .blog-post-wrap .content .blog-post-nav .blog-post-block .card-content .data-and-views {
+    width: 50%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    row-gap: 10px;
+    margin-bottom: 9px;
+  }
 }
 
 .blog-post-wrap .content .blog-post-nav .blog-post-block .card-content__btn {
@@ -385,6 +442,9 @@ img {
   font-size: 14px;
   line-height: 16.14px;
   border-bottom: 1px solid #FFFFFF;
+  cursor: pointer;
+  -webkit-transition: color .2s;
+  transition: color .2s;
   font-family: "RoadRadio";
   font-style: normal;
   font-weight: 700;
@@ -394,6 +454,10 @@ img {
   border-color: #FFFFFF;
   margin-bottom: 27px;
   margin-left: 10px;
+}
+
+.blog-post-wrap .content .blog-post-nav .blog-post-block .card-content__btn:hover {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .blog-post-wrap .content .slick-prev {
@@ -493,8 +557,8 @@ img {
   width: 22px;
   height: 18px;
   background: url("../../../assets/icons/views.svg"), no-repeat;
-  -webkit-transform: translate(-23px, -4px);
-          transform: translate(-23px, -4px);
+  -webkit-transform: translate(-27px, -4px);
+          transform: translate(-27px, -4px);
 }
 
 .footer {
@@ -564,6 +628,12 @@ img {
   }
 }
 
+@media (max-width: 578px) {
+  .footer .content .contacts {
+    width: 100%;
+  }
+}
+
 .footer .content .contacts__title {
   font-family: "RoadRadio";
   font-style: normal;
@@ -596,6 +666,12 @@ img {
   margin-bottom: 26px;
 }
 
+@media (max-width: 578px) {
+  .footer .content .contacts__phone {
+    margin-right: 7px;
+  }
+}
+
 .footer .content .contacts__mail {
   margin-bottom: 59px;
 }
@@ -603,6 +679,12 @@ img {
 @media (max-width: 1232px) {
   .footer .content .contacts__mail {
     margin-bottom: 0;
+  }
+}
+
+@media (max-width: 578px) {
+  .footer .content .contacts__mail {
+    margin-bottom: 26px;
   }
 }
 
@@ -626,6 +708,14 @@ img {
 .footer .content .contacts .contacts-social-links > li {
   list-style: none;
   margin-right: 51px;
+}
+
+.footer .content .contacts .contacts-social-links > li a {
+  cursor: pointer;
+}
+
+.footer .content .contacts .contacts-social-links > li a:hover {
+  color: #34B86E;
 }
 
 @media (max-width: 1232px) {
@@ -655,6 +745,12 @@ img {
     display: block;
     width: 557px;
     margin-top: 44px;
+  }
+}
+
+@media (max-width: 578px) {
+  .footer .content .map-salon {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -5,9 +5,11 @@ $bg-color: #18181b;
 $card-color: #101010;
 
 $width-content: 1141px;
-$width-mobile-content: 540px;
+$width-desktop-content: 552px;
+$width-mobile-content: 320px;
 
-$mobile-max-width: 1232px;
+$desktop-max-width: 1232px;
+$mobile-max-width: 578px;
 
 @mixin font-settings ($family, $weight, $size, $height) {
     font-family: $family;
@@ -32,6 +34,27 @@ $mobile-max-width: 1232px;
     }
 }
 
+@mixin main-btn {
+    @include font-settings('RoadRadio', 700, 20px, 20.18px);
+    border-style: none;
+    color: $second-color;
+    outline: none;
+    background-color: $main-color;
+    box-shadow: 3px 3px 0px #2A9659;
+    padding: 17px 30px 18px;
+    cursor: pointer;
+    transition: background-color .2s;
+
+    &:active() {
+        box-shadow: none;
+        transform: translate(3px, 3px);
+    }
+
+    &:hover {
+        background-color: rgba($color: $main-color, $alpha: 0.9);
+    }
+}
+
 @mixin second-btn {
     @include font-settings('Gilroy', 600, 16px, 19.09px);
     border-style: none;
@@ -40,6 +63,12 @@ $mobile-max-width: 1232px;
     background-color: transparent;
     border: 1px solid $second-color;
     padding: 12px 16px 13px;
+    cursor: pointer;
+    transition: background-color .2s;
+
+    &:hover {
+        background-color: $main-color;
+    }
 }
 
 @mixin details-btn {
@@ -47,6 +76,12 @@ $mobile-max-width: 1232px;
     color: $second-color;
     @include font-settings('Gilroy', 300, 14px, 16.14px);
     border-bottom: 1px solid $second-color;
+    cursor: pointer;
+    transition: color .2s;
+
+    &:hover {
+        color: rgba($color: $second-color, $alpha: 0.8);
+    }
 }
 
 @mixin flex-container () {
@@ -111,9 +146,14 @@ img {
     font-size: 0;
 }
 
-.content {
+.content,
+.header {
     @include flex-container();
     width: $width-content;
+
+    @media (max-width: $desktop-max-width) {
+        width: $width-desktop-content;
+    }
 
     @media (max-width: $mobile-max-width) {
         width: $width-mobile-content;
@@ -122,15 +162,20 @@ img {
 
 .header {
     @extend %wrap-block;
-    margin-top: 10px;
+    margin: 0 auto;
+    margin-top: 10px;  
 
     .content {
         @include flex-container();
         justify-content: space-between;
         align-self: center;
 
-        @media (max-width: $mobile-max-width) {
+        @media (max-width: $desktop-max-width) {
             width: 531px;
+        }
+
+        @media (max-width: $mobile-max-width) {
+            width: 100%;
         }
 
         .header-logo {
@@ -163,10 +208,15 @@ img {
                 a {
                     text-decoration: none;
                     color: $second-color;
-                }
+                    transition: color .2s;
+
+                    &:hover {
+                        color: $main-color;
+                    }
+                }   
             }
 
-            &__blog {
+            .current-menu-item {
 
                 a {
                     color: $main-color !important;
@@ -174,7 +224,7 @@ img {
                 }
             }
 
-            @media (max-width: $mobile-max-width) {
+            @media (max-width: $desktop-max-width) {
                 display: none;
             }
         }
@@ -182,6 +232,10 @@ img {
 
     .back-call {
         @include second-btn();
+
+        @media (max-width: $mobile-max-width) {
+            display: none;
+        }
     }
 
     &__burger {
@@ -197,6 +251,7 @@ img {
 }
 
 
+
 .blog-post-wrap {
     @extend %wrap-block;
     padding: 33px 0 74px;
@@ -208,7 +263,7 @@ img {
         color: $second-color;
         height: 100%;
 
-        @media (max-width: $mobile-max-width) {
+        @media (max-width: $desktop-max-width) {
             flex-direction: column;
         }
 
@@ -217,7 +272,7 @@ img {
             background-color: $bg-color;
             margin-right: 34px;
 
-            @media (max-width: $mobile-max-width) {
+            @media (max-width: $desktop-max-width) {
                 width: 100%;
             }
 
@@ -253,7 +308,7 @@ img {
             row-gap: 19px;
 
 
-            @media (max-width: $mobile-max-width) {
+            @media (max-width: $desktop-max-width) {
                 grid-template-columns: repeat(1, 1fr);
                 width: 100%;
             }
@@ -263,7 +318,7 @@ img {
                 border-left: 6px solid $main-color;
                 padding-left: 9px;
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     @include font-settings('RoadRadio', 700, 25px, 25px);
                     margin-top: 41px;
                 }
@@ -275,7 +330,7 @@ img {
                 display: flex;
                 flex-direction: row;
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     width: 100%;
                 }
 
@@ -293,15 +348,32 @@ img {
                         margin: 18px 13px 25px 10px;
                         width: 170px;
 
-                        @media (max-width: $mobile-max-width) {
+                        @media (max-width: $desktop-max-width) {
                             width: 100%;
                             margin-right: 19px;
+                        }
+
+                        @media (max-width: $mobile-max-width) {
+                            width: 90%;
                         }
                     }
 
                     .data-and-views {
                         margin-left: 35px;
                         width: 131px;
+                        
+                        &__views {
+                            @media (max-width: $mobile-max-width) {
+                                margin-left: 3px;
+                           }
+                        }
+
+                        @media (max-width: $mobile-max-width) {
+                             width: 50%;
+                             flex-wrap: wrap;
+                             row-gap: 10px;
+                             margin-bottom: 9px;
+                        }
                     }
 
                     &__btn {
@@ -321,7 +393,7 @@ img {
             transform: rotate(180deg);
             top: -84px;
 
-            @media (max-width: $mobile-max-width) {
+            @media (max-width: $desktop-max-width) {
                 right: 110px;
             }
         }
@@ -330,7 +402,7 @@ img {
             right: 326px;
             top: -84px;
 
-            @media (max-width: $mobile-max-width) {
+            @media (max-width: $desktop-max-width) {
                 right: 36px;
             }
         }
@@ -346,7 +418,7 @@ img {
     align-items: flex-start;
     flex-direction: column;
 
-    @media (max-width: $mobile-max-width) {
+    @media (max-width: $desktop-max-width) {
         width: 100%;
     }
 
@@ -390,7 +462,7 @@ img {
                 width: 22px;
                 height: 18px;
                 background: url('../../../assets/icons/views.svg'), no-repeat;
-                transform: translate(-23px, -4px);
+                transform: translate(-27px, -4px);
             }
         }
     }
@@ -401,7 +473,7 @@ img {
     @extend %wrap-block;
     height: 600px;
 
-    @media (max-width: $mobile-max-width) {
+    @media (max-width: $desktop-max-width) {
         height: 996px;
     }
 
@@ -413,7 +485,7 @@ img {
         color: $second-color;
         height: 100%;
 
-        @media (max-width: $mobile-max-width) {
+        @media (max-width: $desktop-max-width) {
             flex-direction: column;
             justify-content: flex-start;
         }
@@ -421,10 +493,14 @@ img {
         .contacts {
             @include font-settings('Gilroy', 400, 20px, 23.2px);
 
-            @media (max-width: $mobile-max-width) {
+            @media (max-width: $desktop-max-width) {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
+            }
+
+            @media (max-width: $mobile-max-width) {
+                width: 100%;
             }
 
             &__title {
@@ -434,7 +510,7 @@ img {
                 margin-bottom: 41px;
                 margin-top: 28px;
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     @include font-settings('RoadRadio', 700, 25px, 25px);
                     width: 520px;
                     margin-bottom: 28px;
@@ -447,13 +523,21 @@ img {
 
             &__phone {
                 margin-bottom: 26px;
+
+                @media (max-width: $mobile-max-width) {
+                    margin-right: 7px;
+                }
             }
 
             &__mail {
                 margin-bottom: 59px;
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     margin-bottom: 0;
+                }
+
+                @media (max-width: $mobile-max-width) {
+                    margin-bottom: 26px;
                 }
             }
 
@@ -465,14 +549,22 @@ img {
                     list-style: none;
                     margin-right: 51px;
 
+                    a {
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $main-color;
+                        }
+                    }
+
                     &:nth-child(3) {
-                        @media (max-width: $mobile-max-width) {
+                        @media (max-width: $desktop-max-width) {
                             margin-right: 0;
                         }
                     }
                 }
 
-                @media (max-width: $mobile-max-width) {
+                @media (max-width: $desktop-max-width) {
                     @include font-settings('RoadRadio', 400, 14px, 14px);
                 }
             }
@@ -482,11 +574,15 @@ img {
             position: absolute;
             right: 5px;
 
-            @media (max-width: $mobile-max-width) {
+            @media (max-width: $desktop-max-width) {
                 position: relative;
                 display: block;
                 width: 557px;
                 margin-top: 44px;
+            }
+
+            @media (max-width: $mobile-max-width) {
+                width: 100%;
             }
         }
     }
