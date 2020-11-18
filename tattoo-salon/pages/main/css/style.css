@@ -261,6 +261,7 @@ button {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 10px;
+  position: relative;
   /*  .header-nav_active {
             // visibility: visible;
             top: 0;
@@ -387,14 +388,14 @@ button {
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  position: fixed;
+  position: absolute;
   width: 335px;
   height: 242px;
   padding: 100px 18px 24px 27px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  right: 0;
+  right: -20px;
   top: -380px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -408,6 +409,13 @@ button {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+@media (max-width: 578px) {
+  .main-wrap .header .burger-menu {
+    width: 277px;
+    right: 0;
+  }
 }
 
 .main-wrap .header .burger-menu .burger-nav {
@@ -460,8 +468,14 @@ button {
 }
 
 .main-wrap .header .burger-menu_active {
-  top: 0;
-  right: 0;
+  top: -10px;
+  right: -20px;
+}
+
+@media (max-width: 578px) {
+  .main-wrap .header .burger-menu_active {
+    right: 0;
+  }
 }
 
 .main-wrap .header .back-call {
@@ -495,7 +509,7 @@ button {
 .main-wrap .header__burger {
   display: block;
   position: relative;
-  width: 36px;
+  width: 28px;
   height: 31px;
   z-index: 0;
   -webkit-transition: -webkit-transform 0.5s;
@@ -509,7 +523,6 @@ button {
 .main-wrap .header__burger_active {
   background: url("../../../assets/icons/burger-cross.svg"), no-repeat;
   z-index: 5;
-  width: 28px;
   height: 28px;
   visibility: visible;
   -webkit-transform: rotate(-90deg);
