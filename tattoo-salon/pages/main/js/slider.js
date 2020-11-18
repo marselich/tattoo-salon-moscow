@@ -103,14 +103,29 @@ $(function() {
   $(document).ready(function(){
       $('.consult-info__btn').click(() => {
         $('.main-popup').css('display', 'flex');
+        $('body').toggleClass('lock');
       });
 
 
       $('.main-popup__close-btn').click(() => {
         $('.main-popup').css('display', 'none');
+        $('body').toggleClass('lock');
       });
     
       $('.main-popup').click(() => {
         $('.main-popup').css('display', 'none');
+        $('body').toggleClass('lock');
       });
+});
+
+
+//burger-menu
+
+
+$(document).ready(function(){
+    $('.header__burger').click(() => {
+      $('.burger-menu').toggleClass('burger-menu_active');
+    //  $('.header-nav').toggleClass('header-menu_active');
+      $('.header__burger').toggleClass('header__burger_active');
+    });
 });
