@@ -9,6 +9,7 @@ $width-desktop-content: 552px;
 $width-mobile-content: 320px;
 
 $desktop-max-width: 1232px;
+$tablet-max-width: 992px;
 $mobile-max-width: 578px;
 
 @mixin font-settings ($family, $weight, $size, $height) {
@@ -78,6 +79,8 @@ $mobile-max-width: 578px;
 %wrap-block {
     @include flex-container ();
     flex-direction: column;
+
+
 }
 
 
@@ -87,6 +90,10 @@ body {
     box-sizing: border-box;
     background-color: $bg-color;
     overflow-x: hidden;
+
+    &.lock {
+        overflow: hidden;
+    }
 }
 
 h1,
@@ -157,6 +164,7 @@ button {
     @media (max-width: $mobile-max-width) {
         width: $width-mobile-content;
     }
+
 }
 
 
@@ -181,6 +189,13 @@ button {
         box-sizing: border-box;
         transform: translate(345px, -206px);
         outline: none;
+        border: none;
+        border-radius: 50%;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: rgba($color: $second-color, $alpha: 0.9);
+        }
     }
 
     .popup-container {
@@ -231,6 +246,10 @@ button {
     background-size: cover;
     background-attachment: fixed;
 
+    @media (max-width: $tablet-max-width) {
+        background-attachment: scroll;
+    }
+
 
     .header {
         @include flex-container();
@@ -240,6 +259,7 @@ button {
         .header-logo {
             @include flex-container();
             flex-direction: row;
+            z-index: 6;
 
             &__svg {
                 width: 91px;
@@ -285,11 +305,104 @@ button {
 
             @media (max-width: $desktop-max-width) {
                 display: none;
+              /*   @include flex-container();
+                color: $second-color;
+                @include font-settings('Gilroy', 400, 14px, 17px);
+                position: fixed;
+                width: 335px;
+                height: 242px;
+                padding: 100px 18px 24px 27px;
+                justify-content: space-between;
+                right: 0;
+                top: -380px;
+                flex-direction: column;
+                text-align: left;
+                background-color: $card-color;
+                z-index: 4;
+                transition: top 0.5s;
+                align-items: flex-start; */
+            }
+
+            @media (max-width: $mobile-max-width) {
+                width: 277px;
             }
         }
 
+
+        .burger-menu {
+            @include flex-container();
+            color: $second-color;
+            @include font-settings('Gilroy', 400, 14px, 17px);
+            position: fixed;
+            width: 335px;
+            height: 242px;
+            padding: 100px 18px 24px 27px;
+            justify-content: space-between;
+            right: 0;
+            top: -380px;
+            flex-direction: row;
+            text-align: left;
+            background-color: $card-color;
+            z-index: 4;
+            transition: top 0.5s;
+            align-items: flex-start;
+
+            .burger-nav {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+
+
+                .current-menu-item {
+                    a {
+                        color: $main-color !important;
+                        border-bottom: 1px solid $main-color;
+                    }
+                }
+
+                &>li {
+                    a {
+                        text-decoration: none;
+                        color: $second-color;
+                        transition: color 0.2s;
+
+                        &:hover {
+                            color: $main-color;
+                        }
+                    }
+                }
+
+            }
+
+            .burger-info {
+                list-style: none;
+                color: $main-color;
+                align-self: flex-end;
+                display: flex;
+                flex-direction: column;
+                height: 50%;
+                justify-content: space-between;
+            }
+        }
+
+        .burger-menu_active {
+            // visibility: visible;
+            top: 0;
+            right: 0;
+        }
+
+       /*  .header-nav_active {
+            // visibility: visible;
+            top: 0;
+            right: 0;
+        } */
+
+
         .back-call {
             @include second-btn();
+            z-index: 5;
 
             @media (max-width: $mobile-max-width) {
                 display: none;
@@ -302,9 +415,21 @@ button {
             position: relative;
             width: 36px;
             height: 31px;
-            z-index: 2;
+            z-index: 0;
             transition: transform 0.5s;
             background: url('../../../assets/icons/burger-menu.svg'), no-repeat;
+            cursor: pointer;
+            // visibility: hidden;
+            // transition: all 2s;
+
+            &_active {
+                background: url('../../../assets/icons/burger-cross.svg'), no-repeat;
+                z-index: 5;
+                width: 28px;
+                height: 28px;
+                visibility: visible;
+                transform: rotate(-90deg);
+            }
         }
     }
 
@@ -501,7 +626,7 @@ button {
         padding: 50px 0 20px;
     }
 
-    
+
 
     .content {
         @include flex-container();
@@ -697,12 +822,21 @@ button {
                     margin-right: 0;
                 }
 
+                @media (max-width: $mobile-max-width) {
+                    margin-bottom: 20px;
+                }
+
                 &__logo {
                     margin: 0 auto;
                     margin-bottom: 12px;
 
                     @media (max-width: $desktop-max-width) {
                         margin: 0;
+                    }
+
+                    @media (max-width: $mobile-max-width) {
+                        margin-left: 20px;
+                        margin-bottom: 10px;
                     }
                 }
 
@@ -752,6 +886,11 @@ button {
                 margin-right: 0;
             }
 
+            @media (max-width: $mobile-max-width) {
+                padding: 15px 0;
+                @include font-settings('RoadRadio', 700, 15px, 15px);
+            }
+
             &:active() {
                 box-shadow: none;
                 transform: translate(3px, -127px);
@@ -787,8 +926,14 @@ button {
     background-size: cover;
     background-attachment: fixed;
 
+
+
     @media (max-width: $desktop-max-width) {
         height: 744px;
+    }
+
+    @media (max-width: $tablet-max-width) {
+        background-attachment: scroll;
     }
 
     @media (max-width: $mobile-max-width) {
@@ -906,11 +1051,19 @@ button {
 
                 .services-btns {
 
+                    @media (max-width: $mobile-max-width) {
+                        margin: 20px;
+                    }
+
                     &__btn {
                         @include main-btn();
                         @include font-settings('RoadRadio', 700, 16px, 16.14px);
                         padding: 10px 16px 9px;
                         margin-right: 28px;
+
+                        @media (max-width: $mobile-max-width) {
+                            margin-bottom: 20px;
+                        }
                     }
 
                     &__details {
@@ -954,6 +1107,10 @@ button {
                 width: 236px;
                 height: 390px;
                 transform: translateY(-110%);
+            }
+
+            @media (max-width: $mobile-max-width) {
+                transform: translateY(-162%);
             }
         }
 
@@ -1114,6 +1271,11 @@ button {
     background-attachment: fixed;
     padding: 20px 0 20px;
 
+
+    @media (max-width: $tablet-max-width) {
+        background-attachment: scroll;
+    }
+
     .content {
         @include flex-container();
         flex-direction: row;
@@ -1258,7 +1420,7 @@ button {
 
 .our-masters-wrap {
     @extend %wrap-block;
-    height: 628px;
+    padding: 30px 0 30px;
 
     .content {
         @include flex-container();
@@ -1299,8 +1461,8 @@ button {
             width: 100%;
 
             @media (max-width: $mobile-max-width) {
-                margin-top: 35px;
-            }  
+                margin-top: 65px;
+            }
 
             .master-card {
                 text-align: center;
@@ -1368,6 +1530,10 @@ button {
     background-attachment: fixed;
     padding: 8px 0 15px;
 
+    @media (max-width: $tablet-max-width) {
+        background-attachment: scroll;
+    }
+
     .content {
         @include flex-container();
         flex-direction: row;
@@ -1384,9 +1550,7 @@ button {
                 order: -1;
             }
 
-            @media (max-width: $mobile-max-width) {
-                
-            }
+            @media (max-width: $mobile-max-width) {}
         }
 
         .tattoo-tool {
@@ -1416,7 +1580,7 @@ button {
                 width: 100%;
                 height: 100%;
             }
-            
+
 
             &__title {
                 @include font-settings('RoadRadio', 700, 20px, 20.18px);
@@ -1588,6 +1752,10 @@ button {
                 @media (max-width: $desktop-max-width) {
                     right: 150px;
                 }
+
+                @media (max-width: $mobile-max-width) {
+                    top: -80px;
+                }
             }
 
             .slick-next {
@@ -1596,6 +1764,10 @@ button {
 
                 @media (max-width: $desktop-max-width) {
                     right: 76px;
+                }
+
+                @media (max-width: $mobile-max-width) {
+                    top: -80px;
                 }
             }
         }
@@ -1609,6 +1781,10 @@ button {
     background: url('../../../assets/images/main/sertificates-bg.png'), no-repeat;
     background-size: cover;
     background-attachment: fixed;
+
+    @media (max-width: $tablet-max-width) {
+        background-attachment: scroll;
+    }
 
     .content {
         @include flex-container();
@@ -1688,7 +1864,7 @@ button {
         flex-direction: column;
         align-items: flex-start;
         color: $second-color;
-       // height: 100%;
+        // height: 100%;
 
 
         .reviews-title {
@@ -1759,6 +1935,10 @@ button {
                 @media (max-width: $desktop-max-width) {
                     right: 110px;
                 }
+
+                @media (max-width: $mobile-max-width) {
+                    top: -75px;
+                }
             }
 
             .slick-next {
@@ -1767,6 +1947,10 @@ button {
 
                 @media (max-width: $desktop-max-width) {
                     right: 36px;
+                }
+
+                @media (max-width: $mobile-max-width) {
+                    top: -75px;
                 }
             }
         }
@@ -1778,9 +1962,7 @@ button {
     @extend %wrap-block;
     padding: 30px 0 30px;
 
-    @media (max-width: $desktop-max-width) {
-
-    }
+    @media (max-width: $desktop-max-width) {}
 
     .content {
         @include flex-container();
@@ -1966,6 +2148,10 @@ button {
                 @media (max-width: $desktop-max-width) {
                     right: 110px;
                 }
+
+                @media (max-width: $mobile-max-width) {
+                    top: -75px;
+                }
             }
 
             .slick-next {
@@ -1974,6 +2160,10 @@ button {
 
                 @media (max-width: $desktop-max-width) {
                     right: 36px;
+                }
+
+                @media (max-width: $mobile-max-width) {
+                    top: -75px;
                 }
             }
         }

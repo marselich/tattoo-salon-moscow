@@ -250,6 +250,7 @@ img {
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
   background: url("../../../assets/icons/burger-menu.svg"), no-repeat;
+  cursor: pointer;
 }
 
 .portfolio-wrap {
@@ -996,6 +997,12 @@ img {
   background-attachment: fixed;
 }
 
+@media (max-width: 992px) {
+  .certificates-wrap {
+    background-attachment: scroll;
+  }
+}
+
 .certificates-wrap .content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1092,6 +1099,12 @@ img {
   }
 }
 
+@media (max-width: 578px) {
+  .certificates-wrap .content .certificates-list .slick-prev {
+    top: -65px;
+  }
+}
+
 .certificates-wrap .content .certificates-list .slick-next {
   right: 326px;
   top: -84px;
@@ -1100,6 +1113,12 @@ img {
 @media (max-width: 1232px) {
   .certificates-wrap .content .certificates-list .slick-next {
     right: 36px;
+  }
+}
+
+@media (max-width: 578px) {
+  .certificates-wrap .content .certificates-list .slick-next {
+    top: -65px;
   }
 }
 
