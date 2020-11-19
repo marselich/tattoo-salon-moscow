@@ -1,0 +1,84 @@
+.add-services-wrap {
+    @extend %wrap-block;
+    padding: 30px 0 30px;
+
+    @media (max-width: $desktop-max-width) {}
+
+    .content {
+        @include flex-container();
+        flex-direction: column;
+        align-items: flex-start;
+        color: $second-color;
+        height: 100%;
+
+        .add-services-title {
+            @include font-settings('RoadRadio', 700, 30px, 30.27px);
+            border-left: 6px solid $main-color;
+            padding-left: 9px;
+            margin-bottom: 59px;
+
+            @media (max-width: $desktop-max-width) {
+                @include font-settings('RoadRadio', 700, 25px, 25px);
+            }
+        }
+
+        .add-services-list {
+            @include flex-container();
+            flex-direction: row;
+
+            @media (max-width: $desktop-max-width) {
+                flex-wrap: wrap;
+                justify-content: left;
+                row-gap: 12px;
+            }
+
+            .add-services-block {
+                text-align: center;
+                background-color: $card-color;
+                width: 316px;
+                height: 181px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+                margin-right: 33px;
+                padding: 17px 21px;
+
+                @media (max-width: $desktop-max-width) {
+                    text-align: left;
+                    width: 255px;
+                    padding: 0;
+                    margin-right: 30px;
+                }
+
+                &:nth-child(2) {
+
+                    @media (max-width: $desktop-max-width) {
+                        margin: 0;
+                    }
+                }
+
+                &__title {
+                    @include font-settings('RoadRadio', 700, 25px, 25.22px);
+                    color: $main-color;
+                    width: 255px;
+                    margin: auto;
+
+                    @media (max-width: $desktop-max-width) {
+                        @include font-settings('RoadRadio', 700, 20px, 20px);
+                        margin-left: 11px;
+                    }
+                }
+
+                &__desc {
+                    @include font-settings('Gilroy', 300, 14px, 16.14px);
+                    color: $second-color;
+
+                    @media (max-width: $desktop-max-width) {
+                        margin-left: 11px;
+                    }
+                }
+            }
+        }
+    }
+}

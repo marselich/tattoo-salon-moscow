@@ -1,0 +1,359 @@
+.main-wrap {
+    @extend %wrap-block;
+    background: url('../img/main/first-bg.png'), no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    @media (max-width: $tablet-max-width) {
+        background-attachment: scroll;
+    }
+
+
+    .header {
+        @include flex-container();
+        justify-content: space-between;
+        margin-top: 10px;
+        position: relative;
+
+        .header-logo {
+            @include flex-container();
+            flex-direction: row;
+            z-index: 6;
+
+            &__svg {
+                width: 91px;
+                height: 76px;
+                background: url('../icons/main-ico.svg'), no-repeat;
+            }
+
+            &__name {
+                @include font-settings('Gilroy', 400, 14.05px, 13.27px);
+                width: 112px;
+                color: $second-color;
+                user-select: none;
+            }
+        }
+
+        .header-nav {
+            @include flex-container();
+            @include font-settings('Gilroy', 400, 20px, 23.2px);
+
+            &>li {
+
+                list-style: none;
+                margin-right: 45px;
+
+                a {
+                    text-decoration: none;
+                    color: $second-color;
+                    transition: color .2s;
+
+                    &:hover {
+                        color: $main-color;
+                    }
+                }
+            }
+
+            .current-menu-item {
+
+                a {
+                    color: $main-color !important;
+                    border-bottom: 1px solid $main-color;
+                }
+            }
+
+            @media (max-width: $desktop-max-width) {
+                display: none;
+            }
+
+            @media (max-width: $mobile-max-width) {
+                width: 277px;
+            }
+        }
+
+
+        .burger-menu {
+            @include flex-container();
+            color: $second-color;
+            @include font-settings('Gilroy', 400, 14px, 17px);
+            position: absolute;
+            width: 335px;
+            height: 242px;
+            padding: 100px 18px 24px 27px;
+            justify-content: space-between;
+            right: -20px;
+            top: -380px;
+            flex-direction: row;
+            text-align: left;
+            background-color: $card-color;
+            z-index: 4;
+            transition: top 0.5s;
+            align-items: flex-start;
+
+            @media (max-width: $mobile-max-width) {
+                width: 277px;
+                right: 0;
+            }
+
+            .burger-nav {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+
+
+                .current-menu-item {
+                    a {
+                        color: $main-color !important;
+                        border-bottom: 1px solid $main-color;
+                    }
+                }
+
+                &>li {
+                    a {
+                        text-decoration: none;
+                        color: $second-color;
+                        transition: color 0.2s;
+
+                        &:hover {
+                            color: $main-color;
+                        }
+                    }
+                }
+
+            }
+
+            .burger-info {
+                list-style: none;
+                color: $main-color;
+                align-self: flex-end;
+                display: flex;
+                flex-direction: column;
+                height: 50%;
+                justify-content: space-between;
+            }
+        }
+
+        .burger-menu_active {
+            // visibility: visible;
+            top: -10px;
+            right: -20px;
+
+            @media (max-width: $mobile-max-width) {
+                right: 0;
+            }
+        }
+
+
+        .back-call {
+            @include second-btn();
+            z-index: 5;
+
+            @media (max-width: $mobile-max-width) {
+                display: none;
+            }
+        }
+
+        &__burger {
+            //display: none;
+            display: block;
+            position: relative;
+            width: 28px;
+            height: 31px;
+            z-index: 0;
+            transition: transform 0.5s;
+            background: url('../icons/burger-menu.svg'), no-repeat;
+            cursor: pointer;
+            // visibility: hidden;
+            // transition: all 2s;
+
+            &_active {
+                background: url('../icons/burger-cross.svg'), no-repeat;
+                z-index: 5;
+                height: 28px;
+                visibility: visible;
+                transform: rotate(-90deg);
+            }
+        }
+    }
+
+    .content {
+
+        @media (max-width: $desktop-max-width) {
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+
+        .consult-info {
+            @include flex-container();
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+           // height: 484px;
+            margin-right: 31px;
+            z-index: 1;
+
+            @media (max-width: $desktop-max-width) {
+                justify-content: center;
+                width: 50%;
+            }
+
+            @media (max-width: $mobile-max-width) {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            &__title {
+                @include font-settings ('RoadRadio', 900, 60px, 61px);
+                color: $second-color;
+                width: 392px;
+
+                @media (max-width: $desktop-max-width) {
+                    @include font-settings ('RoadRadio', 900, 40px, 40px);
+                }
+
+                @media (max-width: $mobile-max-width) {
+                    width: 100%;
+                }
+            }
+
+            &__subtitle {
+                @include font-settings ('Gilroy', 600, 20px, 23.86px);
+                color: $second-color;
+                margin-top: 54px;
+
+                &>span {
+                    color: $main-color;
+                }
+
+                @media (max-width: $desktop-max-width) {
+                    @include font-settings ('Gilroy', 600, 18px, 21px);
+                    width: 281px;
+                    margin-top: 22px;
+                }
+            }
+
+            &__btn {
+                @include main-btn();
+                margin-top: 41px;
+
+                @media (max-width: $desktop-max-width) {
+                    @include font-settings ('RoadRadio', 700, 14px, 14px);
+                    padding: 14px 24px;
+                    margin-top: 27px;
+                }
+            }
+
+            .social-net-links {
+                @include flex-container();
+                @include font-settings('RoadRadio', 400, 20px, 20.18px);
+                margin-top: 123px;
+
+                @media (max-width: $desktop-max-width) {
+                    flex-wrap: wrap;
+                    width: 219px;
+                    justify-content: flex-start;
+                    margin-top: 19px;
+                    row-gap: 7px;
+                }
+
+                &>li {
+                    list-style: none;
+                    margin-right: 5px;
+
+                    button {
+                        @include second-btn();
+                        border-color: $main-color;
+                    }
+                }
+
+
+
+                &__instagram {
+                    @media (max-width: $desktop-max-width) {
+                        order: 1;
+                    }
+                }
+
+                .facebook-btn {
+                    padding: 11px 22px 10px;
+                }
+
+                .instagram-btn {
+                    padding: 11px 18px 10px;
+                }
+
+                .vk-btn {
+                    padding: 11px 29px 10px;
+
+
+                }
+            }
+        }
+
+        .tattoo-master-img {
+            margin-right: 108px;
+
+            @media (max-width: $desktop-max-width) {
+                position: absolute;
+                max-width: 53%;
+                max-height: 360px;
+                transform: translateX(241px);
+                overflow: hidden;
+                object-fit: contain;
+                margin-right: 0;
+                align-self: flex-end;
+            }
+
+            @media (max-width: $mobile-max-width) {
+                display: none;
+            }
+        }
+
+        .scroll-further {
+            @include font-settings('RoadRadio', 400, 20px, 20.18px);
+            transform: rotate(-90deg);
+            color: $main-color;
+            position: absolute;
+            width: 172px;
+            right: 2%;
+
+            @media (max-width: $desktop-max-width) {
+                display: none;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 7.78px;
+                width: 12.73px;
+                background: url('../icons/main-arrow.svg'), no-repeat;
+                transform: rotate(90deg) translate(6px, 17px);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                height: 7.78px;
+                width: 12.73px;
+                background: url('../icons/main-arrow.svg'), no-repeat;
+                transform: rotate(90deg) translate(6px, 198px);
+            }
+        }
+
+    }
+
+    .tattoo-tap-logo {
+        position: absolute;
+        height: 601px;
+        width: 57px;
+        background: url('../img/main/tattoo-tap.png'), no-repeat;
+        left: 0px;
+        top: 0px;
+
+        @media (max-width: $desktop-max-width) {
+            display: none;
+        }
+    }
+}

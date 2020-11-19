@@ -1,0 +1,80 @@
+.services-certificates-wrap {
+    @extend %wrap-block;
+    //height: 624px;
+    padding: 27px 0 55px;
+    background: url('../img/training/sertificates-bg.png'), no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    @media (max-width: $tablet-max-width) {
+        background-attachment: scroll;
+    }
+
+    .content {
+        @include flex-container();
+        flex-direction: column;
+        color: $second-color;
+        height: 100%;
+
+
+        .certificate-title {
+            @include font-settings('RoadRadio', 700, 30px, 30.27px);
+            border-left: 6px solid $main-color;
+            align-self: flex-start;
+            padding-left: 9px;
+            margin-bottom: 54px;
+
+            @media (max-width: $desktop-max-width) {
+                @include font-settings('RoadRadio', 700, 25px, 25px);
+            }
+        }
+
+        .services-certificates-list {
+            @include flex-container();
+            width: 100%;
+            position: relative;
+
+            @media (max-width: $desktop-max-width) {
+                width: 100%;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+            }
+
+            @media (max-width: $mobile-max-width) {
+                margin-top: 40px;
+            }
+
+            .certificate-item {
+                display: flex;
+                justify-content: center;
+            }
+
+            .slick-prev {
+                right: 400px;
+                transform: rotate(180deg);
+                top: -84px;
+
+                @media (max-width: $desktop-max-width) {
+                    right: 110px;
+                }
+
+                @media (max-width: $mobile-max-width) {
+                    top: -65px;
+                }
+            }
+
+            .slick-next {
+                right: 326px;
+                top: -84px;
+
+                @media (max-width: $desktop-max-width) {
+                    right: 36px;
+                }
+
+                @media (max-width: $mobile-max-width) {
+                    top: -65px;
+                }
+            }
+        }
+    }
+}

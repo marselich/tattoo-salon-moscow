@@ -1,5 +1,5 @@
-$(document).ready(function(){
-    $('.stock-slider').slick({
+let mySlider = (className) => {
+    $(className).slick({
         arrows: true,
         slidesToShow: 3,
         slidesToScroll: 3,
@@ -14,61 +14,19 @@ $(document).ready(function(){
             }
         ]
     }); 
-});
+};
 
-$(document).ready(function(){
-    $('.masters-cards').slick({
-        arrows: true,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        responsive: [
-            {
-                breakpoint: 1201,
-                settings: {
-                    arrows: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
-    }); 
-});
 
-$(document).ready(function(){
-    $('.reviews-slider').slick({
-        arrows: true,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        responsive: [
-            {
-                breakpoint: 1201,
-                settings: {
-                    arrows: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
-    }); 
-});
+  $(document).ready(mySlider('.stock-slider'));
+  $(document).ready(mySlider('.masters-cards'));
+  $(document).ready(mySlider('.reviews-slider'));
+  $(document).ready(mySlider('.usefull-articles-slider'));
+  $(document).ready(mySlider('.courses-cards'));
+  $(document).ready(mySlider('.services-certificates-list'));
+  $(document).ready(mySlider('.services-reviews-slider'));
 
-$(document).ready(function(){
-    $('.usefull-articles-slider').slick({
-        arrows: true,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        responsive: [
-            {
-                breakpoint: 1201,
-                settings: {
-                    arrows: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
-    }); 
-});
+
+
 
 
 $(function() {
@@ -128,4 +86,12 @@ $(document).ready(function(){
     //  $('.header-nav').toggleClass('header-menu_active');
       $('.header__burger').toggleClass('header__burger_active');
     });
+});
+
+$(document).ready(function(){
+  $('.second-header__burger').click(() => {
+    $('.burger-menu').toggleClass('burger-menu_active');
+  //  $('.second-header-nav').toggleClass('second-header-menu_active');
+    $('.second-header__burger').toggleClass('second-header__burger_active');
+  });
 });

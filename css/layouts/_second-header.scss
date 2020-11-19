@@ -1,0 +1,179 @@
+.second-header {
+    @extend %wrap-block;
+    margin: 0 auto;
+    margin-top: 10px;
+
+    .content {
+        @include flex-container();
+        justify-content: space-between;
+        align-self: center;
+        position: relative;
+
+        @media (max-width: $desktop-max-width) {
+            width: 531px;
+        }
+
+        @media (max-width: $mobile-max-width) {
+            width: 320px
+        }
+
+        .header-logo {
+            @include flex-container();
+            flex-direction: row;
+
+            &__svg {
+                width: 91px;
+                height: 76px;
+                background: url('../icons/main-ico.svg'), no-repeat;
+            }
+
+            &__name {
+                @include font-settings('Gilroy', 400, 14.05px, 13.27px);
+                width: 112px;
+                color: $second-color;
+                user-select: none;
+            }
+        }
+
+        .header-nav {
+            @include flex-container();
+            @include font-settings('Gilroy', 400, 20px, 23.2px);
+
+            &>li {
+
+                list-style: none;
+                margin-right: 45px;
+
+                a {
+                    text-decoration: none;
+                    color: $second-color;
+                    transition: color .2s;
+
+                    &:hover {
+                        color: $main-color;
+                    }
+                }
+            }
+
+            .current-menu-item {
+
+                a {
+                    color: $main-color !important;
+                    border-bottom: 1px solid $main-color;
+                }
+            }
+
+            @media (max-width: $desktop-max-width) {
+                display: none;
+            }
+        }
+
+
+
+        .burger-menu {
+            @include flex-container();
+            color: $second-color;
+            @include font-settings('Gilroy', 400, 14px, 17px);
+            position: absolute;
+            width: 335px;
+            height: 242px;
+            padding: 100px 18px 24px 27px;
+            justify-content: space-between;
+            right: -20px;
+            top: -380px;
+            flex-direction: row;
+            text-align: left;
+            background-color: $card-color;
+            z-index: 4;
+            transition: top 0.5s;
+            align-items: flex-start;
+    
+            @media (max-width: $mobile-max-width) {
+                width: 277px;
+                right: 0;
+            }
+    
+            .burger-nav {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+    
+    
+                .current-menu-item {
+                    a {
+                        color: $main-color !important;
+                        border-bottom: 1px solid $main-color;
+                    }
+                }
+    
+                &>li {
+                    a {
+                        text-decoration: none;
+                        color: $second-color;
+                        transition: color 0.2s;
+    
+                        &:hover {
+                            color: $main-color;
+                        }
+                    }
+                }
+    
+            }
+    
+            .burger-info {
+                list-style: none;
+                color: $main-color;
+                align-self: flex-end;
+                display: flex;
+                flex-direction: column;
+                height: 50%;
+                justify-content: space-between;
+            }
+        }
+    
+        .burger-menu_active {
+            // visibility: visible;
+            top: -10px;
+            right: -20px;
+    
+            @media (max-width: $mobile-max-width) {
+                right: 0;
+            }
+        }
+    
+        .back-call {
+            @include second-btn();
+            z-index: 5;
+    
+            @media (max-width: $mobile-max-width) {
+                display: none;
+            }
+        }
+    
+        .second-header__burger {
+            //display: none;
+            display: block;
+            position: relative;
+            width: 28px;
+            height: 31px;
+            z-index: 0;
+            transition: transform 0.5s;
+            background: url('../icons/burger-menu.svg'), no-repeat;
+            cursor: pointer;
+            // visibility: hidden;
+            // transition: all 2s;
+    
+            &_active {
+                background: url('../icons/burger-cross.svg'), no-repeat;
+                z-index: 5;
+                height: 28px;
+                visibility: visible;
+                transform: rotate(-90deg);
+            }
+        }
+    }
+
+    
+}

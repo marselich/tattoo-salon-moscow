@@ -1,0 +1,155 @@
+.services-wrap {
+    @extend %wrap-block;
+    height: 488px;
+    background: url('../img/main/services-bg.png'), no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+
+
+    @media (max-width: $desktop-max-width) {
+        height: 744px;
+    }
+
+    @media (max-width: $tablet-max-width) {
+        background-attachment: scroll;
+    }
+
+    @media (max-width: $mobile-max-width) {
+        height: 100%;
+        padding: 28px 0 56px;
+    }
+
+    .content {
+        @include flex-container();
+        flex-direction: column;
+        align-items: flex-start;
+        color: $second-color;
+
+        .services-title {
+
+            &__title {
+                @include font-settings('RoadRadio', 700, 30px, 30.27px);
+                border-left: 6px solid $main-color;
+                padding-left: 9px;
+            }
+
+            &__subtitle {
+                @include font-settings('Gilroy', 400, 18px, 20.88px);
+                margin-left: 15px;
+                width: 307px;
+            }
+
+            margin-bottom: 26px;
+        }
+
+        .services-blocks {
+            @include flex-container();
+            flex-direction: row;
+
+            @media (max-width: $desktop-max-width) {
+                flex-wrap: wrap;
+            }
+
+            .services-block {
+                @include flex-container();
+                flex-direction: column;
+                justify-content: space-around;
+                width: 487px;
+                height: 319px;
+                border: 1px solid $main-color;
+                background-color: transparent;
+                margin-right: 36px;
+                padding: 0px 37px 0 27px;
+                align-items: flex-start;
+
+                @media (max-width: $desktop-max-width) {
+                    height: 241px;
+                    margin-bottom: 28px;
+                    margin-right: 0;
+                }
+
+                @media (max-width: $mobile-max-width) {
+                    width: 100%;
+                    height: 100%;
+                    padding: 20px 0;
+                }
+
+                &__title {
+                    @include font-settings('RoadRadio', 700, 25px, 25.22px);
+                    width: 220px;
+                    margin-left: 75px;
+
+                    @media (max-width: $mobile-max-width) {
+                        @include font-settings('RoadRadio', 700, 20px, 20px);
+                        margin-bottom: 20px;
+                        margin-left: 94px;
+                    }
+                }
+
+                &__desc {
+                    @include font-settings('Gilroy', 300, 14px, 16.14px);
+
+                    @media (max-width: $mobile-max-width) {
+                        margin: 20px;
+                    }
+                }
+
+                &__btn {
+                    @include main-btn();
+                    @include font-settings('RoadRadio', 700, 16px, 16.14px);
+                    padding: 10px 16px 9px;
+
+                    @media (max-width: $mobile-max-width) {
+                        margin: 20px;
+                    }
+                }
+
+
+                &__tool-svg {
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 62px;
+                        height: 62px;
+                        background: url('../icons/tattoo-tool.svg'), no-repeat;
+                        transform: translateX(-75px);
+                    }
+                }
+
+                &__guy-svg {
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 62px;
+                        height: 62px;
+                        background: url('../icons/cap-guy.svg'), no-repeat;
+                        transform: translateX(-75px);
+                    }
+                }
+
+                .services-btns {
+
+                    @media (max-width: $mobile-max-width) {
+                        margin: 20px;
+                    }
+
+                    &__btn {
+                        @include main-btn();
+                        @include font-settings('RoadRadio', 700, 16px, 16.14px);
+                        padding: 10px 16px 9px;
+                        margin-right: 28px;
+
+                        @media (max-width: $mobile-max-width) {
+                            margin-bottom: 20px;
+                        }
+                    }
+
+                    &__details {
+                        @include details-btn();
+                    }
+                }
+            }
+        }
+    }
+}

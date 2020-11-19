@@ -1,0 +1,104 @@
+.our-masters-wrap {
+    @extend %wrap-block;
+    padding: 30px 0 30px;
+
+    .content {
+        @include flex-container();
+        flex-direction: column;
+        align-items: flex-start;
+        color: $second-color;
+        height: 100%;
+
+        .our-masters-title {
+
+            &__title {
+                @include font-settings('RoadRadio', 700, 30px, 30.27px);
+                border-left: 6px solid $main-color;
+                padding-left: 9px;
+
+                @media (max-width: $desktop-max-width) {
+                    @include font-settings('RoadRadio', 700, 25px, 25px);
+                }
+            }
+
+            &__subtitle {
+                @include font-settings('Gilroy', 400, 18px, 20.88px);
+                margin-left: 15px;
+                width: 374px;
+
+                @media (max-width: $desktop-max-width) {
+                    @include font-settings('Gilroy', 400, 16px, 17px);
+                    width: 239px;
+                }
+            }
+
+            margin-bottom: 57px;
+        }
+
+        .masters-cards {
+            @include flex-container();
+            position: relative;
+            width: 100%;
+
+            @media (max-width: $mobile-max-width) {
+                margin-top: 65px;
+            }
+
+            .master-card {
+                text-align: center;
+                background-color: $card-color;
+                width: 363px;
+                height: 418px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+                margin-right: 37px;
+
+                &__img {
+                    border: 3px solid $main-color;
+                    width: calc(100% - 6px);
+                }
+
+                &__name {
+                    @include font-settings('RoadRadio', 700, 25px, 25.22px);
+                    color: $main-color;
+                    margin-top: 18px;
+                }
+
+                &__info {
+                    @include font-settings('Gilroy', 300, 14px, 16.14px);
+                }
+
+                &__btn {
+                    @include details-btn();
+                    @include font-settings('RoadRadio', 700, 20px, 20.18px);
+                    color: $main-color;
+                    border-color: $main-color;
+                    margin-bottom: 34px;
+                }
+
+
+            }
+
+            .slick-prev {
+                right: 400px;
+                transform: rotate(180deg);
+                top: -84px;
+
+                @media (max-width: $desktop-max-width) {
+                    right: 110px;
+                }
+            }
+
+            .slick-next {
+                right: 326px;
+                top: -84px;
+
+                @media (max-width: $desktop-max-width) {
+                    right: 36px;
+                }
+            }
+        }
+    }
+}

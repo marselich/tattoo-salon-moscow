@@ -1,0 +1,44 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
+
+@import 'base/reset';
+
+//main
+@import 'layouts/main-popup';
+
+@import 'layouts/main-wrap';
+@import 'layouts/second-header';
+@import 'layouts/training-main-wrap';
+
+@import 'layouts/master-info-wrap';
+@import 'layouts/services-wrap';
+
+@import 'layouts/portfolio-wrap';
+@import 'layouts/services-portfolio-wrap';
+
+
+@import 'layouts/why-choose-us-wrap';
+@import 'layouts/tattoo-courses-wrap';
+
+@import 'layouts/our-masters-wrap';
+@import 'layouts/skills-wrap';
+@import 'layouts/stock-wrap';
+
+@import 'layouts/certificates-wrap';
+@import 'layouts/services-certificates-wrap';
+
+
+@import 'layouts/reviews-wrap';
+@import 'layouts/services-reviews-wrap';
+
+@import 'layouts/add-services-wrap';
+
+@import 'layouts/usefull-articles-wrap';
+@import 'layouts/blog-posts-wrap';
+@import 'layouts/blog-post-wrap';
+
+@import 'layouts/faq-wrap';
+@import 'layouts/footer';
+
+

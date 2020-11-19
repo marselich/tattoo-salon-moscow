@@ -1,0 +1,70 @@
+.main-popup {
+    @extend %wrap-block;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background: rgba(41, 41, 41, 0.6);
+    z-index: 10;
+
+
+    &__close-btn {
+        background: url('../img/main/close-btn.png') no-repeat;
+        background-position: center;
+        height: 22px;
+        width: 22px;
+        box-sizing: border-box;
+        transform: translate(345px, -206px);
+        outline: none;
+        border: none;
+        border-radius: 50%;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: rgba($color: $second-color, $alpha: 0.9);
+        }
+    }
+
+    .popup-container {
+        display: flex;
+        width: 291px;
+        color: $second-color;
+        flex-direction: column;
+        padding: 16px 35px 47px 33px;
+        background-color: $card-color;
+
+        &__title {
+            @include font-settings ('RoadRadio', 900, 30px, 30px);
+            margin-bottom: 20px;
+        }
+
+        &__subtitle {
+            @include font-settings('Gilroy', 400, 16px, 19px);
+            margin-bottom: 23px;
+
+            &>span {
+                color: $main-color;
+            }
+        }
+
+        &>input {
+            border: 1px solid $main-color;
+            margin-bottom: 23px;
+            @include font-settings('Gilroy', 400, 16px, 19px);
+            background-color: $card-color;
+            color: $second-color;
+            padding: 16px 0 15px 26px;
+        }
+
+        &__btn {
+            @include main-btn();
+        }
+    }
+}
+
+.main-popup_showed {
+    display: none;
+}

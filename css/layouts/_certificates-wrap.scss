@@ -1,0 +1,78 @@
+.certificates-wrap {
+    @extend %wrap-block;
+    height: 624px;
+    background: url('../img/main/sertificates-bg.png'), no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    @media (max-width: $tablet-max-width) {
+        background-attachment: scroll;
+    }
+
+    .content {
+        @include flex-container();
+        flex-direction: column;
+        color: $second-color;
+        height: 100%;
+
+        .certificate-title {
+            @include font-settings('RoadRadio', 700, 30px, 30.27px);
+            border-left: 6px solid $main-color;
+            align-self: flex-start;
+            padding-left: 9px;
+            margin-bottom: 54px;
+
+            @media (max-width: $desktop-max-width) {
+                @include font-settings('RoadRadio', 700, 25px, 25px);
+            }
+        }
+
+        .certificates-list {
+            @include flex-container();
+
+            @media (max-width: $desktop-max-width) {
+                width: 100%;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+            }
+
+            .certificate-item {
+                &:nth-child(1) {
+                    .certificate-item__tool-img {
+                        @media (max-width: $desktop-max-width) {
+                            width: 168px;
+                            height: 238px;
+                        }
+                    }
+                }
+
+                &:nth-child(2) {
+                    position: absolute;
+
+                    .certificate-item__tool-img {
+                        width: 269px;
+                        height: 197px;
+
+                        @media (max-width: $desktop-max-width) {
+                            width: 137px;
+                            height: 100px;
+                        }
+
+                        @media (max-width: $mobile-max-width) {
+                            position: absolute;
+                            transform: translate(173px, 17px);
+                        }
+                    }
+
+                    transform: translate(173px, 17px);
+
+                    @media (max-width: $desktop-max-width) {
+                        position: relative;
+                        transform: translate(0);
+
+                    }
+                }
+            }
+        }
+    }
+}

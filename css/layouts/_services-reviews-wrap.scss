@@ -1,0 +1,93 @@
+.services-reviews-wrap {
+    @extend %wrap-block;
+    height: 561px;
+
+    .content {
+        @include flex-container();
+        flex-direction: column;
+        align-items: flex-start;
+        color: $second-color;
+        height: 100%;
+
+
+        .reviews-title {
+            @include font-settings('RoadRadio', 700, 30px, 30.27px);
+            border-left: 6px solid $main-color;
+            padding-left: 9px;
+            margin-bottom: 54px;
+
+            @media (max-width: $desktop-max-width) {
+                @include font-settings('RoadRadio', 700, 25px, 25px);
+            }
+        }
+
+        .services-reviews-slider {
+            @include flex-container();
+            flex-direction: row;
+            position: relative;
+            width: 100%;
+
+            .reviews-block {
+                text-align: left;
+                background-color: $card-color;
+                width: 359px;
+                height: 369px;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: flex-start;
+                flex-direction: column;
+                margin-right: 33px;
+
+
+                &__name {
+                    @include font-settings('RoadRadio', 700, 18px, 18.16px);
+                    color: $main-color;
+                    margin-left: 14px;
+                }
+
+                &__comment {
+                    @include font-settings('Gilroy', 300, 14px, 16px);
+                    margin-left: 14px;
+                    margin-right: 27px;
+                    // margin-bottom: 25px;
+                }
+
+                .reviews-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    margin-left: 14px;
+                    column-gap: 24px;
+                    row-gap: 8px;
+
+                    &__img {
+                        border: 1px solid $main-color;
+
+                        @media (max-width: $mobile-max-width) {
+                            width: 85%;
+                        }
+                    }
+                }
+            }
+
+            .slick-prev {
+                right: 400px;
+                transform: rotate(180deg);
+                top: -84px;
+
+                @media (max-width: $desktop-max-width) {
+                    right: 110px;
+                }
+            }
+
+            .slick-next {
+                right: 326px;
+                top: -84px;
+
+                @media (max-width: $desktop-max-width) {
+                    right: 36px;
+                }
+            }
+        }
+    }
+}

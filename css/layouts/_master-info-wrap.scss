@@ -1,0 +1,303 @@
+.master-info-wrap {
+    @extend %wrap-block;
+    height: 656px;
+
+    @media (max-width: $desktop-max-width) {
+        height: 956px;
+    }
+
+    @media (max-width: $mobile-max-width) {
+        height: auto;
+        padding: 50px 0 20px;
+    }
+
+
+
+    .content {
+        @include flex-container();
+        flex-wrap: wrap;
+        color: $second-color;
+        align-items: flex-start;
+        justify-content: flex-end;
+        height: 80%;
+
+        @media (max-width: $desktop-max-width) {
+            width: $width-desktop-content;
+        }
+
+        @media (max-width: $mobile-max-width) {
+            width: $width-mobile-content;
+        }
+
+        .owl-img {
+            margin-right: 73px;
+            margin-top: 25px;
+
+            @media (max-width: $mobile-max-width) {
+                margin-right: 0;
+                width: 100%;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 110px;
+                width: 210px;
+                background: url('../img/main/first-plaster.png'), no-repeat;
+                transform: translate(-76px, -56px);
+
+                @media (max-width: $desktop-max-width) {
+                    background-size: 142px 74px;
+                    width: 142px;
+                    height: 74px;
+                    transform: translate(-23px, -41px);
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                height: 187px;
+                width: 173px;
+                background: url('../img/main/second-plaster.png'), no-repeat;
+                transform: translate(-109px, 283px);
+
+                @media (max-width: $desktop-max-width) {
+                    background-size: 79px 85px;
+                    width: 79px;
+                    height: 85px;
+                    transform: translate(-55px, 259px);
+                }
+            }
+
+            @media (max-width: $desktop-max-width) {
+                align-self: flex-start;
+                margin-right: 38px;
+                margin-top: 0;
+            }
+
+            img {
+                @media (max-width: $desktop-max-width) {
+                    width: 250px;
+                    height: 311px;
+                }
+            }
+        }
+
+        .master-info {
+            @include flex-container();
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 1;
+
+            width: 326px;
+            height: 276px;
+            z-index: 1;
+
+
+
+            @media (max-width: $desktop-max-width) {
+                flex-direction: column;
+                align-items: flex-end;
+                width: 252px;
+            }
+
+            @media (max-width: $mobile-max-width) {
+                width: 100%;
+                height: auto;
+            }
+
+            &__name {
+                @include font-settings('RoadRadio', 700, 30px, 30.27px);
+                border-left: 6px solid $main-color;
+                padding-left: 9px;
+                width: 511px;
+                margin-bottom: 29px;
+
+                @media (max-width: $desktop-max-width) {
+                    @include font-settings('RoadRadio', 700, 20px, 20px);
+                    width: 237px;
+                }
+
+                @media (max-width: $mobile-max-width) {
+                    width: 94%;
+                    margin-bottom: 20px;
+                    margin-top: 30px;
+                }
+            }
+
+            .master-achives {
+                width: 326px;
+                margin-right: 31px;
+                @include font-settings('Gilroy', 400, 16px, 18.56px);
+
+                &__name {
+                    margin-bottom: 10px;
+                }
+
+                &__list {
+                    list-style: none;
+
+                    &>li {
+                        margin-left: 14px;
+                        margin-bottom: 10px;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            background-color: $main-color;
+                            transform: translate(-15px, 4px);
+                        }
+                    }
+                }
+
+                @media (max-width: $desktop-max-width) {
+                    @include font-settings('Gilroy', 400, 14px, 16px);
+                    width: 100%;
+                    margin-right: 0;
+                }
+            }
+
+
+        }
+
+        .master-education {
+            width: 326px;
+            @include font-settings('Gilroy', 400, 16px, 18.56px);
+            margin-top: 62px;
+            margin-left: 29px;
+            z-index: 1;
+
+            @media (max-width: $desktop-max-width) {
+                @include font-settings('Gilroy', 400, 14px, 16px);
+                width: 540px;
+                margin-top: 25px;
+                margin-left: 0;
+            }
+        }
+
+        .master-services {
+            @include flex-container();
+            text-align: center;
+            align-items: flex-start;
+            @include font-settings('Gilroy', 500, 14px, 16.48px);
+            width: 694px;
+            transform: translateY(-130px);
+            z-index: 1;
+
+            @media (max-width: $desktop-max-width) {
+                transform: translateY(0);
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                text-align: left;
+                column-gap: 30px;
+                row-gap: 16px;
+                margin-top: 37px;
+            }
+
+            &-block {
+                margin-right: 9px;
+
+                @media (max-width: $desktop-max-width) {
+                    width: 255px;
+                    margin-right: 0;
+                }
+
+                @media (max-width: $mobile-max-width) {
+                    margin-bottom: 20px;
+                }
+
+                &__logo {
+                    margin: 0 auto;
+                    margin-bottom: 12px;
+
+                    @media (max-width: $desktop-max-width) {
+                        margin: 0;
+                    }
+
+                    @media (max-width: $mobile-max-width) {
+                        margin-left: 20px;
+                        margin-bottom: 10px;
+                    }
+                }
+
+                &:nth-child(1) {
+
+                    .master-services-block__logo {
+                        width: 60px;
+                        height: 59px;
+                        background: url('../icons/skull-pen.svg'), no-repeat;
+                    }
+                }
+
+                &:nth-child(2) {
+
+                    .master-services-block__logo {
+                        width: 35px;
+                        height: 60px;
+                        background: url('../icons/mini-heart.svg'), no-repeat;
+                    }
+                }
+
+                &:nth-child(3) {
+
+                    .master-services-block__logo {
+                        width: 65px;
+                        height: 60px;
+                        background: url('../icons/hand.svg'), no-repeat;
+                    }
+                }
+
+                &__info {
+                    width: 101%;
+                }
+            }
+        }
+
+        .about-master-btn {
+            @include main-btn();
+            transform: translate(0, -130px);
+            margin-top: 44px;
+            margin-right: 96px;
+
+            @media (max-width: $desktop-max-width) {
+                transform: translate(0, 0);
+                width: 100%;
+                margin-top: 38px;
+                margin-right: 0;
+            }
+
+            @media (max-width: $mobile-max-width) {
+                padding: 15px 0;
+                @include font-settings('RoadRadio', 700, 15px, 15px);
+            }
+
+            &:active() {
+                box-shadow: none;
+                transform: translate(3px, -127px);
+
+                @media (max-width: $desktop-max-width) {
+                    transform: translate(3px, 3px);
+                }
+            }
+        }
+    }
+
+    .about-us-text {
+        position: absolute;
+        @include font-settings('RoadRadio', 700, 178.02px, 179.62px);
+        transform: rotate(90deg) translate(170px, -166px);
+        ;
+        right: 0;
+        color: rgba($color: $bg-color, $alpha: 1.0);
+        text-shadow: rgba($color: $second-color, $alpha: 0.2) 0 0 2px;
+
+        @media (max-width: $desktop-max-width) {
+            display: none;
+        }
+    }
+}
